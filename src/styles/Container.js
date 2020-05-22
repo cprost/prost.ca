@@ -2,7 +2,8 @@ import styled from '@emotion/styled'
 import theme from './theme'
 
 const Container = styled.div`
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   margin: 0 auto;
   width: 100%;
   max-width: ${theme.maxWidth};
