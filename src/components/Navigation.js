@@ -12,10 +12,13 @@ const Nav = styled.nav`
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  height: 75px;
   padding-left: 2rem;
   padding-right: 2rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
   background: grey;
+  transition: all 0.4s ease-in-out;
+  transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
 
   h1 {
     white-space: nowrap;
@@ -85,7 +88,6 @@ const BurgerMenu = styled.nav`
     letter-spacing: 0.5rem;
     color: darkgrey;
     text-decoration: none;
-    transition: color 0.3s linear;
   }
 `
 
@@ -94,25 +96,47 @@ class Navigation extends Component {
     super(props)
     this.state = {
       active: false,
-      counter: 0,
+      scrollAmount: 0,
+      scrollPos: 'none',
     }
 
     this.toggleActive = this.toggleActive.bind(this)
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', () => this.onScroll());
+  }
+
   toggleActive(active, counter) {
     this.setState({
-      active: !active,
-      counter: counter + 1
+      active: !active
       })
   }
 
-  render() {
+  onScroll() {
+    const { scrollAmount } = this.state
+    const yOffset = window.scrollY
+    const scrollThresh = 50  // minimum scroll pixels to update scroll state
 
-    console.log(this.state.active)
+    if (Math.abs(scrollAmount - yOffset) <= scrollThresh) {
+      return  // to prevent menu movement for scrolling less than threshold pixels
+    } else if (yOffset < scrollThresh * 2) {
+      this.setState({ scrollPos: 'top' })
+    } else if (yOffset > scrollAmount) {
+      this.setState({ scrollPos: 'down' })
+    } else {
+      this.setState({ scrollPos: 'up' })
+    }
+
+    this.setState({ scrollAmount: yOffset })  // update regardless of state
+  }
+
+  render() {
+    const { active, scrollPos } = this.state
+    const toggleActive = this.toggleActive
 
     return (
-      <Nav>
+      <Nav scrollPos={scrollPos}>
         <h1>{"<Chris />"}</h1>
         <NavList>
           <NavItem>Experience</NavItem>
@@ -121,11 +145,10 @@ class Navigation extends Component {
           <NavItem>Resume</NavItem>
         </NavList>
         <Burger
-              active={this.state.active}
-              counter={this.state.counter}
-              toggleActive={this.toggleActive}
-            className={`${this.state.active ? 'active' : ''}`}/>
-        <BurgerMenu className={`${this.state.active ? 'active' : ''}`} >
+              active={active}
+              toggleActive={toggleActive}
+            className={`${active ? 'active' : ''}`}/>
+        <BurgerMenu className={`${active ? 'active' : ''}`} >
           <h2>
             Experience
           </h2>
@@ -141,7 +164,7 @@ class Navigation extends Component {
         </BurgerMenu>
         <MobileBlur
           onClick={() => this.setState({active: false})}
-          className={`${this.state.active ? 'active' : ''}`}/>
+          className={`${active ? 'active' : ''}`}/>
       </Nav>
     )
   }

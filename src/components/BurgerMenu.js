@@ -54,13 +54,13 @@ export const BurgerButton = styled.button`
 
 class Burger extends Component {
   render() {
-    const { active, counter, toggleActive } = this.props
+    const { active, toggleActive } = this.props
 
     return (
       <BurgerButton
         className={`${active ? 'active' : ''}`}
         onClick={() => {
-          toggleActive(active, counter)
+          toggleActive(active)
         }}
 
       >
