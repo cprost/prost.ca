@@ -12,7 +12,7 @@ const theme = {
       value: '600px'
     },
     medium: {
-      value: ['600px', '1024px']
+      value: '800px',
     },
     large: {
       selector: 'min-width',
