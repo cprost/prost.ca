@@ -100,6 +100,9 @@ const BurgerMenu = styled.nav`
 class Navigation extends Component {
   constructor(props) {
     super(props)
+
+    this._mounted = false
+
     this.state = {
       active: false,
       scrollAmount: 0,
@@ -110,11 +113,18 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
+    this._mounted = true
     window.addEventListener('scroll', () => this.onScroll());
   }
 
+  componentWillUnmount() {
+    this._mounted = false;
+ }
+
   toggleActive(active, counter) {
-    this.setState({
+    // check if mounted before modifying state
+
+    this._mounted && this.setState({
       active: !active
       })
   }

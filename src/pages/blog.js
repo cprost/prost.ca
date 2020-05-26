@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
-import { Container } from '../styles'
+import { Container, Section, theme } from '../styles'
 import Pagination from '../components/Pagination'
 
 const postsPerPage = 10  // also defined in gatsby-node.js
@@ -34,21 +34,23 @@ export const query = graphql`
 const BlogPage = ({data: { allMarkdownRemark: blogPosts }, pageContext}) => {
   return (
     <Layout>
-      <Container>
-        <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
-        <ul>
-          {blogPosts.edges.map((post) => {
-            return (
-              <li>
-                <Link to={`/blog/${post.node.fields.slug}`}>
-                  <h2>{post.node.frontmatter.title}</h2>
-                  <p>{post.node.frontmatter.date}</p>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </Container>
+      <Section>
+        <Container>
+          <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
+          <ul>
+            {blogPosts.edges.map((post) => {
+              return (
+                <li>
+                  <Link to={`/blog/${post.node.fields.slug}`}>
+                    <h2>{post.node.frontmatter.title}</h2>
+                    <p>{post.node.frontmatter.date}</p>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </Container>
+      </Section>
     </Layout>
   )
 }
