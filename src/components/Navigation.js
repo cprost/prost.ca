@@ -9,6 +9,21 @@ import { theme } from '../styles'
 const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
+
+  &.active-nav {
+    color: white;
+    text-shadow: 0 0 2px #ddd;
+  }
+`
+
+const BurgerLink = styled(Link)`
+  color: grey;
+  text-decoration: none;
+
+  &.active-nav {
+    color: black;
+    text-shadow: 0 0 2px #888;
+  }
 `
 
 const Nav = styled.nav`
@@ -154,38 +169,42 @@ class Navigation extends Component {
     return (
       <Nav scrollPos={scrollPos}>
         <h1><StyledLink to='/'>{"<Chris />"}</StyledLink></h1>
+
         <NavList>
           <NavItem>
-            <StyledLink to="/experience">Experience</StyledLink>
+            <StyledLink to="/experience" activeClassName={'active-nav'}>Experience</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="/blog">Blog</StyledLink>
+            <StyledLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to='/contact'>Contact</StyledLink>
+            <StyledLink to='/contact' activeClassName={'active-nav'}>Contact</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to='/resume'>Resume</StyledLink>
+            <StyledLink to='/resume' activeClassName={'active-nav'}>Resume</StyledLink>
           </NavItem>
         </NavList>
+
         <Burger
-              active={active}
-              toggleActive={toggleActive}
-            className={`${active ? 'active' : ''}`}/>
+          active={active}
+          toggleActive={toggleActive}
+          className={`${active ? 'active' : ''}`}/>
+
         <BurgerMenu className={`${active ? 'active' : ''}`} >
           <h2>
-            <StyledLink to="/experience">Experience</StyledLink>
+            <BurgerLink to="/experience" activeClassName={'active-nav'}>Experience</BurgerLink>
           </h2>
           <h2>
-            <StyledLink to="/blog">Blog</StyledLink>
+            <BurgerLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</BurgerLink>
           </h2>
           <h2>
-            <StyledLink to='/contact'>Contact</StyledLink>
+            <BurgerLink to='/contact' activeClassName={'active-nav'}>Contact</BurgerLink>
           </h2>
           <h2>
-            <StyledLink to='/resume'>Resume</StyledLink>
+            <BurgerLink to='/resume' activeClassName={'active-nav'}>Resume</BurgerLink>
           </h2>
         </BurgerMenu>
+
         <MobileBlur
           onClick={() => this.setState({active: false})}
           className={`${active ? 'active' : ''}`}/>
