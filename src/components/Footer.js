@@ -2,6 +2,10 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const FooterWrapper = styled.footer`
+  position: absolute;
+  flex-shrink: 0;
+  width: 100%;
+  bottom: 0;
   text-align: center;
 `
 
