@@ -1,34 +1,43 @@
 import React from 'react'
-import {Link, graphql, useStaticQuery} from 'gatsby'
+import {Link, graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
 import { Container } from '../styles'
+import Pagination from '../components/Pagination'
 
-const BlogPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"  }}) {
-        edges {
-          node {
-            frontmatter {
-              title,
-              date
-            }
-            fields {
-              slug
-            }
+const postsPerPage = 10  // also defined in gatsby-node.js
+
+export const query = graphql`
+  query BlogPosts($skip: Int! = 0) {
+    allMarkdownRemark( 
+      filter: {fileAbsolutePath: {regex: "/blog/"  }}
+      sort: {fields: [frontmatter___date], order: DESC}
+      limit: 10
+      skip: $skip
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title,
+            date
+          }
+          fields {
+            slug
           }
         }
       }
     }
-  `)
+  }
+`
 
+const BlogPage = ({data: { allMarkdownRemark: blogPosts }, pageContext}) => {
   return (
-
     <Layout>
       <Container>
+        <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
         <ul>
-          {data.allMarkdownRemark.edges.map((post) => {
+          {blogPosts.edges.map((post) => {
             return (
               <li>
                 <Link to={`/blog/${post.node.fields.slug}`}>

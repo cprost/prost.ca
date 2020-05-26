@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 import Burger from './BurgerMenu'
 
 import { theme } from '../styles'
+
+const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+`
 
 const Nav = styled.nav`
   position: fixed;
@@ -137,12 +143,20 @@ class Navigation extends Component {
 
     return (
       <Nav scrollPos={scrollPos}>
-        <h1>{"<Chris />"}</h1>
+        <h1><StyledLink to='/'>{"<Chris />"}</StyledLink></h1>
         <NavList>
-          <NavItem>Experience</NavItem>
-          <NavItem>Blog</NavItem>
-          <NavItem>Contact</NavItem>
-          <NavItem>Resume</NavItem>
+          <NavItem>
+            <StyledLink to="/experience">Experience</StyledLink>
+          </NavItem>
+          <NavItem>
+            <StyledLink to="/blog">Blog</StyledLink>
+          </NavItem>
+          <NavItem>
+            <StyledLink to='/contact'>Contact</StyledLink>
+          </NavItem>
+          <NavItem>
+            <StyledLink to='/resume'>Resume</StyledLink>
+          </NavItem>
         </NavList>
         <Burger
               active={active}
@@ -150,16 +164,16 @@ class Navigation extends Component {
             className={`${active ? 'active' : ''}`}/>
         <BurgerMenu className={`${active ? 'active' : ''}`} >
           <h2>
-            Experience
+            <StyledLink to="/experience">Experience</StyledLink>
           </h2>
           <h2>
-            Blog
+            <StyledLink to="/blog">Blog</StyledLink>
           </h2>
           <h2>
-            Contact
+            <StyledLink to='/contact'>Contact</StyledLink>
           </h2>
           <h2>
-            Resume
+            <StyledLink to='/resume'>Resume</StyledLink>
           </h2>
         </BurgerMenu>
         <MobileBlur
