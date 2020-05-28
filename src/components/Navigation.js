@@ -4,24 +4,24 @@ import { Link } from 'gatsby'
 
 import Burger from './BurgerMenu'
 
-import { theme } from '../styles'
+import { theme, media } from '../styles'
 
 const StyledLink = styled(Link)`
-  color: black;
+  color: ${theme.colours.light};
   text-decoration: none;
 
   &.active-nav {
-    color: white;
-    text-shadow: 0 0 2px #ddd;
+    color: ${theme.colours.darkBlue};
+    font-weight: 700;
   }
 `
 
 const BurgerLink = styled(Link)`
-  color: grey;
+  color: ${theme.colours.offWhite};
   text-decoration: none;
 
   &.active-nav {
-    color: black;
+    color: ${theme.colours.darkBlue};
     text-shadow: 0 0 2px #888;
   }
 `
@@ -37,11 +37,11 @@ const Nav = styled.nav`
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
-  background: grey;
+  background: ${theme.colours.midBlue};
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
 
-  h1 {
+  h2 {
     white-space: nowrap;
   }
 `
@@ -50,7 +50,9 @@ const NavList = styled.ul`
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: ${theme.screenSizes.small.value}) {
+  margin-left: 0;
+
+  ${media.small} {
     display: none;
   }
 `
@@ -60,7 +62,7 @@ const NavItem = styled.li`
   letter-spacing: 0.15rem;
   margin-left: 2rem;
 
-  @media screen and (max-width: ${theme.screenSizes.medium.value}) {
+  ${media.medium} {
     margin-left: 1rem;
   }
 `
@@ -88,7 +90,7 @@ const BurgerMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: white;
+  background-color: ${theme.colours.midBlueDark};
   height: 100vh;
   text-align: left;
   padding: 0 1rem;
@@ -107,7 +109,6 @@ const BurgerMenu = styled.nav`
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: darkgrey;
     text-decoration: none;
   }
 `
@@ -145,11 +146,11 @@ class Navigation extends Component {
   }
 
   onScroll() {
-    const { scrollAmount } = this.state
+    const { scrollAmount, active } = this.state
     const yOffset = window.scrollY
-    const scrollThresh = 50  // minimum scroll pixels to update scroll state
+    const scrollThresh = 10  // minimum scroll pixels to update scroll state
 
-    if (Math.abs(scrollAmount - yOffset) <= scrollThresh) {
+    if (Math.abs(scrollAmount - yOffset) <= scrollThresh || active) {
       return  // to prevent menu movement for scrolling less than threshold pixels
     } else if (yOffset < scrollThresh * 2) {
       this.setState({ scrollPos: 'top' })
@@ -168,7 +169,7 @@ class Navigation extends Component {
 
     return (
       <Nav scrollPos={scrollPos}>
-        <h1><StyledLink to='/'>{"<Chris />"}</StyledLink></h1>
+        <h2><StyledLink to='/'>{"<Chris />"}</StyledLink></h2>
 
         <NavList>
           <NavItem>

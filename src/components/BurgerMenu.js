@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from '@emotion/styled'
 
-import { theme } from '../styles'
+import { theme, media } from '../styles'
 
 // followed this as a guideline for the burger menu:
 // https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
@@ -27,15 +27,15 @@ export const BurgerButton = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: white;
+    background: ${theme.colours.light};
     border-radius: 5px;
     transition: all 0.2s linear;
     position: relative;
     transform-origin: 1px;
 
-    &.active {
-      background: darkgrey;
-    }
+    ${'' /* &.active {
+      background: ${theme.co};
+    } */}
 
     &.active:nth-child(1) {
       transform: rotate(45deg);

@@ -2,12 +2,30 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-const StyledLink = styled(Link)`
-  ${'' /* &.lol {
-    text-decoration: none;
-    cursor: not-allowed;
-  } */}
+import { theme } from '../styles'
+
+const PagiWrapper = styled.div`
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+  width: 100%;
 `
+
+const PagiComponent = styled.h4`
+  display: inline;
+  margin-left: 1rem;
+  color: ${theme.colours.dark};
+
+  a {
+    text-decoration: none;
+    color: ${theme.colours.darkBlue};
+  }
+
+  &.noneleft {
+    color: ${theme.colours.lighterBlue};
+  }
+`
+
 
 const Pagination = ({ currentPage, totalCount, postsPerPage }) => {
   currentPage = (currentPage === undefined || isNaN(currentPage)) ? 1 : currentPage  // API doesn't play nice on skip
@@ -15,19 +33,31 @@ const Pagination = ({ currentPage, totalCount, postsPerPage }) => {
 
   const nextPage = currentPage + 1
   const prevPage = currentPage - 1
-  console.log('current page: ', currentPage)
+
   return (
-    <div>
-      <p>
+    <PagiWrapper>
+      <PagiComponent className={currentPage === 1 ? 'noneleft' : ''}>
         {currentPage === 1
-          ? ''
-          : <StyledLink className={"lol"} to={`/blog/${currentPage === 2 ? '' : prevPage}`}>← Prev</StyledLink>}
-        You are on Page {currentPage} of {totalPages}
+          ? '← Prev'
+          : <Link to={`/blog/${currentPage === 2 ? '' : prevPage}`}>
+            ← Prev
+          </Link>
+        }
+      </PagiComponent>
+
+      <PagiComponent>
+        Page {currentPage} of {totalPages}
+      </PagiComponent>
+
+      <PagiComponent className={currentPage === totalPages ? 'noneleft' : ''}>
         {currentPage === totalPages
-          ? ''
-          : <StyledLink to={`/blog/${nextPage}`}>Next →</StyledLink>}
-      </p>
-    </div>
+          ? 'Next →'
+          : <Link to={`/blog/${nextPage}`}>
+            Next →
+          </Link>
+        }
+      </PagiComponent>
+    </PagiWrapper>
   )
 }
 

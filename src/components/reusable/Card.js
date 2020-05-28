@@ -38,7 +38,7 @@ const Card = (props) => {
   return (
     <CardWrapper>
       <CardTitle>
-        <h1>Subject Title</h1>
+        <h3>Subject Title</h3>
       </CardTitle>
       <CardImage src={Astro} alt="placeholder for image" />
       <CardDesc>

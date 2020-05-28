@@ -12,13 +12,33 @@ const theme = {
       value: '600px'
     },
     medium: {
-      value: '800px',
+      // needs two selectors in media.js
+      value: ['600px', '1023px']
     },
     large: {
       selector: 'min-width',
       value: '1024px'
     }
-  }
+  },
+
+  fonts: {
+    Roboto: 'Roboto, sans-serif',
+    Montserrat: 'Montserrat, sans-serif',
+    OpenSans: 'Open Sans, sans-serif'
+  },
+
+  colours: {
+    midBlue: "#4596b9",
+    midBlueDark: "#3d88a8",
+    lightBlue: "#99bbcc",
+    lighterBlue: "#a2cadc",
+    lightestBlue: "#cff8ff",
+    darkestBlue: "#0a2766",
+    darkBlue: "#124d7f",
+    light: "#faffff",
+    dark: "#2d353d",
+    offWhite: "#f0f0f0",
+  },
 }
 
 export default theme

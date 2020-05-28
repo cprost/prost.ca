@@ -3,10 +3,14 @@
 
 import Container from './Container'
 import Section from './Section'
+import Gradient from './Gradient'
 import theme from './theme'
+import media from './media'
 
 export {
   Container,
   Section,
+  Gradient,
   theme,
+  media,
 }
