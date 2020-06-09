@@ -40,6 +40,7 @@ const Nav = styled.nav`
   background: ${theme.colours.midBlue};
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
+  z-index: 10;
 
   h2 {
     white-space: nowrap;
@@ -173,9 +174,6 @@ class Navigation extends Component {
 
         <NavList>
           <NavItem>
-            <StyledLink to="/experience" activeClassName={'active-nav'}>Experience</StyledLink>
-          </NavItem>
-          <NavItem>
             <StyledLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</StyledLink>
           </NavItem>
           <NavItem>
@@ -192,9 +190,6 @@ class Navigation extends Component {
           className={`${active ? 'active' : ''}`}/>
 
         <BurgerMenu className={`${active ? 'active' : ''}`} >
-          <h2>
-            <BurgerLink to="/experience" activeClassName={'active-nav'}>Experience</BurgerLink>
-          </h2>
           <h2>
             <BurgerLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</BurgerLink>
           </h2>
