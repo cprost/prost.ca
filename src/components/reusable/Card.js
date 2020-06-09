@@ -34,19 +34,17 @@ const CardDesc = styled.div`
   padding: 0 1rem;
 `
 
-const Card = (props) => {
-  return (
-    <CardWrapper>
-      <CardTitle>
-        <h3>Subject Title</h3>
-      </CardTitle>
-      <CardImage src={Astro} alt="placeholder for image" />
-      <CardDesc>
-        <p>Talk about the card's subject</p>
-        <h3>Learn more</h3>
-      </CardDesc>
-    </CardWrapper>
-  )
-}
+const Card = React.forwardRef((props, ref) => (
+  <CardWrapper ref={ref}>
+    <CardTitle>
+      <h3>Subject Title</h3>
+    </CardTitle>
+    <CardImage src={Astro} alt="placeholder for image" />
+    <CardDesc>
+      <p>Talk about the card's subject</p>
+      <h3>Learn more</h3>
+    </CardDesc>
+  </CardWrapper>
+))
 
 export default Card

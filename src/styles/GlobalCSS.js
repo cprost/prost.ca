@@ -106,6 +106,19 @@ const GlobalCSS = () => {
             font-size: 14px;
           }
         }
+
+        .fadein-enter {
+          transform: translateY(2rem);
+          transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+          opacity: 0.01;
+        }
+
+        .fadein-enter-active {
+          transform: translateY(0);
+          transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+          opacity: 1;
+        }
+
       `}
     />
   )

@@ -39,6 +39,16 @@ const theme = {
     dark: "#2d353d",
     offWhite: "#f0f0f0",
   },
+
+  scrollReveal: (sequence = 1) => {
+    return {
+      delay: sequence * 200,
+      origin: 'bottom',
+      distance: '1.5rem',
+      duration: '600',
+      easing: 'ease-in-out'
+    }
+  }
 }
 
 export default theme
