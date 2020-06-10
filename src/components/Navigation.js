@@ -39,7 +39,6 @@ const Nav = styled.nav`
   box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
   background: ${theme.colours.midBlue};
   ${'' /* font-family: ${props => props.loaded === true ? theme.fonts.OpenSans : 'sans-serif'}; */}
-  font-family: Arial;
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
   z-index: 10;

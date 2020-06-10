@@ -23,7 +23,6 @@ const theme = {
 
   fonts: {
     Roboto: 'Roboto, sans-serif',
-    Montserrat: 'Montserrat, sans-serif',
     OpenSans: 'Open Sans, sans-serif'
   },
 
