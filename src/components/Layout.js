@@ -15,15 +15,33 @@ const Float = styled.div`
   height: 65px;
 `
 
-const Layout = ({children}) => (
-    <Main>
-      <GlobalCSS />
-      <Navigation />
-      {children}
-      <Float>
-        <Footer />
-      </Float>
-    </Main>
-)
+class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      ready: false,
+    }
+  }
+
+  componentDidMount() {
+    console.log('mounted!')
+    this.setState({ ready: true })
+  }
+
+  render() {
+    const { children } = this.props
+
+    return (
+      <Main >
+        <GlobalCSS />
+        <Navigation />
+        {children}
+        <Float>
+          <Footer />
+        </Float>
+      </Main>
+    )
+  }
+}
 
 export default Layout

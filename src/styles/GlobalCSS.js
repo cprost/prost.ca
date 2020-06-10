@@ -17,8 +17,8 @@ const GlobalCSS = () => {
 
         html {
           box-sizing: border-box;
-          font-family: ${theme.fonts.Roboto};
-          scrollbar-width: none;
+          font-family: ${theme.fonts.OpenSans};
+          ${'' /* scrollbar-width: none; */}
         }
 
         html::-webkit-scrollbar {

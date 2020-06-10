@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -38,6 +38,8 @@ const Nav = styled.nav`
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
   background: ${theme.colours.midBlue};
+  ${'' /* font-family: ${props => props.loaded === true ? theme.fonts.OpenSans : 'sans-serif'}; */}
+  font-family: Arial;
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
   z-index: 10;
@@ -124,6 +126,10 @@ class Navigation extends Component {
       active: false,
       scrollAmount: 0,
       scrollPos: 'none',
+      style: {
+        // opacity: 0,
+        // transition: 'all 100ms ease',
+      }
     }
 
     this.toggleActive = this.toggleActive.bind(this)
@@ -131,6 +137,13 @@ class Navigation extends Component {
 
   componentDidMount() {
     this._mounted = true
+    this.setState({
+      style: {
+        // transition: 'all 100ms ease',
+        // transitionDelay: '100ms',
+        // opacity: 1,
+      }
+    })
     window.addEventListener('scroll', () => this.onScroll());
   }
 
@@ -169,7 +182,7 @@ class Navigation extends Component {
     const toggleActive = this.toggleActive
 
     return (
-      <Nav scrollPos={scrollPos}>
+      <Nav scrollPos={scrollPos} >
         <h2><StyledLink to='/'>{"<Chris />"}</StyledLink></h2>
 
         <NavList>

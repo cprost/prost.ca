@@ -31,16 +31,16 @@ const HeroDesc = styled.h4`
   color: ${theme.colours.light};
 `
 
-const Hero = ({myName}) => {
+const Hero = ({data}) => {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     setTimeout(() => setIsMounted(true), 500)
   }, []);
 
-  const title = <HeroTitle style={{ transitionDelay: '200ms' }}>Hi, I'm {myName}.</HeroTitle>
-  const subtitle = <HeroSubtitle style={{ transitionDelay: '400ms' }}>I'm a software engineer with a passion for machine learning.</HeroSubtitle>
-  const desc = <HeroDesc style={{ transitionDelay: '600ms' }}>My favourite languages are Python, C++, and JavaScript. Not Java though.</HeroDesc>
+  const title = <HeroTitle style={{ transitionDelay: '200ms' }}>{data.title}</HeroTitle>
+  const subtitle = <HeroSubtitle style={{ transitionDelay: '400ms' }}>{data.subtitle}</HeroSubtitle>
+  const desc = <HeroDesc style={{ transitionDelay: '600ms' }}>{data.description}</HeroDesc>
 
   const heroItems = [title, subtitle, desc]  // for transitioning/displaying in order
 
@@ -58,9 +58,6 @@ const Hero = ({myName}) => {
           </CSSTransition>
         ))}
         </TransitionGroup>
-        {/* <HeroTitle style={{ transitionDelay: '100ms' }} className="fadein">Hi, I'm {a}.</HeroTitle>
-        <HeroSubtitle>I'm a software engineer with a passion for machine learning.</HeroSubtitle>
-        <HeroDesc>My favourite languages are Python, C++, and JavaScript. Not Java though.</HeroDesc> */}
       </Container>
     </HeroWrapper>
   )
