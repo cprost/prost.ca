@@ -72,6 +72,21 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Open Sans`,
+            variants: [`300`, `400`, `500`, `700`]
+          },
+          {
+            family: `Roboto`,
+            variants: [`300`, `400`, `500`, `700`]
+          },
+        ],
+      },
     }
   ],
 }
