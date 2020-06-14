@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-blog`,
+        name: `markdown-content`,
         path: `${__dirname}/content/`,
       },
     },
@@ -36,9 +36,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false,
-              backgroundColor: 'none',
+              maxWidth: 1200,
+              linkImagesToOriginal: true,
             }
           },
           {

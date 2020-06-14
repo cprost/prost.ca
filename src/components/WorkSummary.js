@@ -28,24 +28,26 @@ class WorkSummary extends Component {
   }
 
   componentDidMount = () => {
-    this.cardRefs.forEach((ref, i) => ScrollReveal().reveal(ref, theme.scrollReveal(i)));
+    this.cardRefs.forEach((ref, i) => ScrollReveal().reveal(ref, theme.scrollReveal(i * 2)));
   }
 
   render() {
-    const cards = [1, 2, 3, 4, 5, 6]  // to be replaced with content later
+    const { data } = this.props
+    console.log(data)
 
     return (
       <Section>
         <Container>
           <p>Placeholder text for work & project summary</p>
+
           <ProjectCards>
-            {cards.map((node, key) => {
-              return <Card
-                key={key}
-                ref={ref => this.cardRefs[key] = ref}
-                className="fadein"
-                />
-            })}
+          {data.map(({ node }, i) => {
+            return <Card 
+              title={node.frontmatter.title}
+              ref={ref => this.cardRefs[i] = ref}
+              img={node.frontmatter.featuredImage.childImageSharp.fluid}
+              />
+          })}
           </ProjectCards>
         </Container>
       </Section>

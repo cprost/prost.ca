@@ -94,3 +94,18 @@ async function paginate({ graphql, actions, limit }) {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /scrollreveal/,  // fixes missing window object error
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

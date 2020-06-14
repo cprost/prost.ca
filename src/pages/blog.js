@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '../components/Layout'
 import { Container, Section, theme } from '../styles'
 import Pagination from '../components/Pagination'
+import ScrollReveal from 'scrollreveal'
 
 const postsPerPage = 10  // also defined in gatsby-node.js
 
@@ -54,7 +55,7 @@ const PostItem = styled.li`
   }
 
   a:hover {
-    background-color: ${theme.colours.lighterBlue};
+    background-color: ${theme.colours.midBlue};
     transition: 0.4s ease-in-out;
     box-shadow: 0 0 4px ${theme.colours.midBlue};
   }
@@ -68,25 +69,33 @@ const PostItem = styled.li`
   }
 `
 
-const PostItemWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
+class BlogPage extends Component {
+  constructor(props) {
+    super(props)
+    this.postRefs = []
+  }
 
-const BlogPage = ({data: { allMarkdownRemark: blogPosts }, pageContext}) => {
-  return (
-    <Layout>
-      <Section>
-        <Container>
+  componentDidMount = () => {
+    this.postRefs.forEach((postRef, i) => ScrollReveal().reveal(postRef, theme.scrollReveal(i)))
+  }
+
+  render() {
+    const { data: { allMarkdownRemark: blogPosts }, pageContext } = this.props
+    console.log(blogPosts)
+
+    return (
+      <Layout>
+        <Section>        
+          <Container>
           <h2>Blog Posts</h2>
-          <PostList>
-            {blogPosts.edges.map((post) => {
+           <PostList>
+            {blogPosts.edges.map((post, key) => {
               return (
-                <PostItem>
+                <PostItem
+                key={key}
+                ref={ref => this.postRefs[key] = ref}
+                >
                   <Link to={`/blog/${post.node.fields.slug}`}>
-                    <PostItemWrapper>
-
-                    </PostItemWrapper>
                     <h3>{post.node.frontmatter.title}</h3>
                     <h4>{post.node.frontmatter.description}</h4>
                     <p>{post.node.frontmatter.date}</p>
@@ -94,12 +103,14 @@ const BlogPage = ({data: { allMarkdownRemark: blogPosts }, pageContext}) => {
                 </PostItem>
               )
             })}
-          </PostList>
-          <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
-        </Container>
-      </Section>
-    </Layout>
-  )
+           </PostList>
+           <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
+          </Container>
+        </Section>
+      </Layout>
+    )
+  }
 }
+
 
 export default BlogPage

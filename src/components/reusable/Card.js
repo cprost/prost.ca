@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-
-import Astro from '../../images/gatsby-icon.png'
+import Img from 'gatsby-image'
 
 const CardWrapper = styled.div`
   border-radius: 8px;
@@ -23,23 +22,32 @@ const CardTitle = styled.div`
   }
 `
 
-const CardImage = styled.img`
-  width: 90%;
-  display: block;
-  margin: 0.5rem auto;
-  text-align: center;
+const ImgWrapper = styled.div`
+  max-height: 200px;
 `
 
 const CardDesc = styled.div`
   padding: 0 1rem;
 `
 
-const Card = React.forwardRef((props, ref) => (
+const Card = React.forwardRef(({ title, img }, ref) => (
   <CardWrapper ref={ref}>
     <CardTitle>
-      <h3>Subject Title</h3>
+      <h3>{title}</h3>
     </CardTitle>
-    <CardImage src={Astro} alt="placeholder for image" />
+
+    
+    <ImgWrapper>
+      <Img 
+        fluid={img}
+        imgStyle={
+          { objectFit: 'contain', maxHeight: '200px' } 
+          /*
+            counteracts gatsby img from filling then getting cropped by parent 
+            FUTURE : adjust for 16:9 aspect ratio images?
+          */ 
+        } /> 
+    </ImgWrapper>
     <CardDesc>
       <p>Talk about the card's subject</p>
       <h3>Learn more</h3>

@@ -1,18 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from '@emotion/styled'
 
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import WorkSummary from '../components/WorkSummary'
 
-import { Gradient, theme } from '../styles'
+import { Gradient } from '../styles'
 
 const IndexPage = ({ data }) => (
     <Layout>
       <Hero data={data.hero.about} />
       <Gradient />
-      <WorkSummary />
+      <WorkSummary data={data.experience.edges} />
     </Layout>
 )
 
@@ -25,6 +24,25 @@ export const query = graphql`
         title
         subtitle
         description
+      }
+    }
+    experience: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/experience/" } }
+      sort: { fields: [frontmatter___order], order: ASC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

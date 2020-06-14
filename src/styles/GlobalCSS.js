@@ -11,14 +11,11 @@ const GlobalCSS = () => {
   return (
     <Global
       styles={css`
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,600&display=swap');
 
         html {
           box-sizing: border-box;
           font-family: ${theme.fonts.OpenSans};
-          ${'' /* scrollbar-width: none; */}
+          scrollbar-width: none;
         }
 
         html::-webkit-scrollbar {

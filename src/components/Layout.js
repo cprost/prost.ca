@@ -18,15 +18,8 @@ const Float = styled.div`
 class Layout extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      ready: false,
-    }
   }
 
-  componentDidMount() {
-    console.log('mounted!')
-    this.setState({ ready: true })
-  }
 
   render() {
     const { children } = this.props
