@@ -1,6 +1,7 @@
 ---
 title: "Post Two - Lots of Text"
 description: "tester"
+headerImage: "./grass.png"
 date: "2020-03-07"
 ---
 

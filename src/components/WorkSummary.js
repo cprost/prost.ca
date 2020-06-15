@@ -39,14 +39,16 @@ class WorkSummary extends Component {
       <Section>
         <Container>
           <p>Placeholder text for work & project summary</p>
-
           <ProjectCards>
           {data.map(({ node }, i) => {
-            return <Card 
-              title={node.frontmatter.title}
-              ref={ref => this.cardRefs[i] = ref}
-              img={node.frontmatter.featuredImage.childImageSharp.fluid}
+            return (
+             <div ref={ref => this.cardRefs[i] = ref}>
+              <Card 
+                title={node.frontmatter.title}
+                img={node.frontmatter.featuredImage.childImageSharp.fluid}
               />
+             </div>
+            )
           })}
           </ProjectCards>
         </Container>

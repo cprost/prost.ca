@@ -7,7 +7,7 @@ const Container = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: ${theme.maxWidth};
-  border: 1px dashed black;
+  ${'' /* border: 1px dashed black; */}
 `
 
 export default Container

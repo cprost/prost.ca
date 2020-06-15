@@ -1,6 +1,7 @@
 ---
 title: "Welcome to my website"
 description: "tester"
+headerImage: "./grass.png"
 date: "2020-03-05"
 ---
 

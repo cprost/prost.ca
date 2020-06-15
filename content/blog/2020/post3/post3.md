@@ -1,6 +1,7 @@
 ---
 title: "Post Three"
 description: "tester"
+headerImage: "./grass.png"
 date: "2020-03-09"
 ---
 

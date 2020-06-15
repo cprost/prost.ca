@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -7,22 +7,22 @@ import Burger from './BurgerMenu'
 import { theme, media } from '../styles'
 
 const StyledLink = styled(Link)`
-  color: ${theme.colours.light};
+  color: ${theme.colours.offWhite};
   text-decoration: none;
 
   &.active-nav {
-    color: ${theme.colours.darkBlue};
+    color: ${theme.colours.offWhite};
     font-weight: 700;
   }
 `
 
 const BurgerLink = styled(Link)`
-  color: ${theme.colours.offWhite};
+  color: ${theme.colours.midBlue};
   text-decoration: none;
 
   &.active-nav {
     color: ${theme.colours.darkBlue};
-    text-shadow: 0 0 2px #888;
+    text-shadow: 0 0 1px ${theme.colours.darkBlue};
   }
 `
 
@@ -38,7 +38,6 @@ const Nav = styled.nav`
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
   background: ${theme.colours.midBlue};
-  ${'' /* font-family: ${props => props.loaded === true ? theme.fonts.OpenSans : 'sans-serif'}; */}
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
   z-index: 10;
@@ -92,7 +91,7 @@ const BurgerMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: ${theme.colours.midBlueDark};
+  background-color: ${theme.colours.offWhite};
   height: 100vh;
   text-align: left;
   padding: 0 1rem;
@@ -110,7 +109,7 @@ const BurgerMenu = styled.nav`
     font-size: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.4rem;
     text-decoration: none;
   }
 `

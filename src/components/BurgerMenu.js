@@ -33,9 +33,9 @@ export const BurgerButton = styled.button`
     position: relative;
     transform-origin: 1px;
 
-    ${'' /* &.active {
-      background: ${theme.co};
-    } */}
+    &.active {
+      background: ${theme.colours.midBlue};
+    }
 
     &.active:nth-child(1) {
       transform: rotate(45deg);
