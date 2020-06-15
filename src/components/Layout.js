@@ -12,7 +12,8 @@ const Main = styled.main`
 `
 
 const Float = styled.div`
-  height: 65px;
+  height: 100px;
+  padding-top: 2rem;
 `
 
 class Layout extends React.Component {

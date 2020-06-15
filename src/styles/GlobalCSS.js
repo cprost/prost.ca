@@ -116,6 +116,15 @@ const GlobalCSS = () => {
           opacity: 1;
         }
 
+        .social-icon {
+          width: 32px;
+          height: 32px;
+
+          path {
+            fill: ${theme.colours.midBlue};
+          }
+        }
+
       `}
     />
   )
