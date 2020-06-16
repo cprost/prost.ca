@@ -4,7 +4,8 @@
 // width unrestricted - full tile sizes, full menu, etc
 
 const theme = {
-  maxWidth: '1200px',  // for containers
+  maxWidthIndex: '1200px',  // for index page
+  maxWidthOther: '1024px',  // for other pages
 
   screenSizes: {
     small: {
@@ -36,6 +37,7 @@ const theme = {
     darkBlue: "#124d7f",
     light: "#faffff",
     dark: "#2d353d",
+    grey: "#6a737d",
     offWhite: "#f0f0f0",
   },
 
@@ -44,7 +46,7 @@ const theme = {
       delay: sequence * 100,
       origin: 'bottom',
       distance: '1.5rem',
-      duration: '600',
+      duration: '400',
       easing: 'ease-in-out'
     }
   }

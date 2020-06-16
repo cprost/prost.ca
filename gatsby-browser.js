@@ -6,4 +6,4 @@
 
 // You can delete this file if you're not using it
 
-import './src/styles/prism-material-oceanic.css'
+import './src/styles/prism-nord.css'

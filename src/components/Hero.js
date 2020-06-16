@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-import { Container, theme } from '../styles'
+import { IndexContainer, theme } from '../styles'
 
 const HeroWrapper = styled.div`
   height: 100vh;
@@ -48,7 +48,7 @@ const Hero = ({data}) => {
 
   return (
     <HeroWrapper>
-      <Container>
+      <IndexContainer>
       <TransitionGroup>
         {isMounted && heroItems.map((node, i) => (
           <CSSTransition
@@ -60,7 +60,7 @@ const Hero = ({data}) => {
           </CSSTransition>
         ))}
         </TransitionGroup>
-      </Container>
+      </IndexContainer>
     </HeroWrapper>
   )
 }

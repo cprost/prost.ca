@@ -5,14 +5,10 @@ import Img from 'gatsby-image'
 import ScrollReveal from 'scrollreveal'
 
 import Layout from '../components/Layout'
-import { Container, Section, Buffer, theme, media } from '../styles'
+import { Container, Section, theme, media } from '../styles'
 import Pagination from '../components/Pagination'
 
-import Astro from '../images/gatsby-astronaut.png'
-
 const postsPerPage = 10  // also defined in gatsby-node.js
-
-
 
 export const query = graphql`
   query BlogPosts($skip: Int! = 0, $limit: Int! = 10) {
@@ -44,10 +40,6 @@ export const query = graphql`
       }
     }
   }
-`
-
-const BlogContainer = styled(Container)`
-  max-width: 1024px;
 `
 
 const PostList = styled.ul`
@@ -94,6 +86,7 @@ const PostImg = styled(Link)`
 
 const PostText = styled.div`
   padding-left: 1rem;
+  padding-right: 1rem;
 
   ${media.small} {
     flex: 2;
@@ -104,6 +97,8 @@ const PostText = styled.div`
 
 const PostTitle = styled.h3`
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 700;
   font-family: ${theme.fonts.Roboto};
   color: ${theme.colours.midBlueDark};
@@ -132,49 +127,6 @@ const PostDate = styled.p`
   }
 `
 
-// class BlogPage extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.postRefs = []
-//   }
-
-//   componentDidMount = () => {
-//     this.postRefs.forEach((postRef, i) => ScrollReveal().reveal(postRef, theme.scrollReveal(i)))
-//   }
-
-//   render() {
-//     const { data: { allMarkdownRemark: blogPosts }, pageContext } = this.props
-//     console.log(blogPosts)
-
-//     return (
-//       <Layout>
-//         <Section>        
-//           <Container>
-//           <h2>Blog Posts</h2>
-//            <PostList>
-//             {blogPosts.edges.map((post, key) => {
-//               return (
-//                 <PostItem
-//                 key={key}
-//                 ref={ref => this.postRefs[key] = ref}
-//                 >
-//                   <Link to={`/blog/${post.node.fields.slug}`}>
-//                     <h3>{post.node.frontmatter.title}</h3>
-//                     <h4>{post.node.frontmatter.description}</h4>
-//                     <p>{post.node.frontmatter.date}</p>
-//                   </Link>
-//                 </PostItem>
-//               )
-//             })}
-//            </PostList>
-//            <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
-//           </Container>
-//         </Section>
-//       </Layout>
-//     )
-//   }
-// }
-
 class BlogPage extends Component {
   constructor(props) {
     super(props)
@@ -191,10 +143,9 @@ class BlogPage extends Component {
 
     return (
       <Layout>
-        {/* <Buffer /> */}
         <Section>        
-          <BlogContainer>
-          <h2>Blog Posts</h2>
+          <Container>
+          <h2>Recent Blog Posts</h2>
            <PostList>
             {blogPosts.edges.map((post, key) => {
               return (
@@ -205,6 +156,7 @@ class BlogPage extends Component {
                     </PostImg>
                     <PostText to={`/blog/${post.node.fields.slug}`}>
                       <Link
+                        to={`/blog/${post.node.fields.slug}`}
                         style={{ textDecoration: 'none' }}
                       >
                         <PostTitle>{post.node.frontmatter.title}</PostTitle>
@@ -218,7 +170,7 @@ class BlogPage extends Component {
             })}
            </PostList>
            <Pagination currentPage={pageContext.currentPage} totalCount={blogPosts.totalCount} postsPerPage={postsPerPage}/>
-          </BlogContainer>
+          </Container>
         </Section>
       </Layout>
     )

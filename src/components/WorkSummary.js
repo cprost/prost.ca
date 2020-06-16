@@ -4,7 +4,7 @@ import ScrollReveal from 'scrollreveal'
 
 import Card from './reusable/Card'
 
-import { Container, Section, theme } from '../styles'
+import { IndexContainer, Section, theme } from '../styles'
 
 const ProjectCards = styled.div`
   display: grid;
@@ -37,7 +37,7 @@ class WorkSummary extends Component {
 
     return (
       <Section>
-        <Container>
+        <IndexContainer>
           <p>Placeholder text for work & project summary</p>
           <ProjectCards>
           {data.map(({ node }, i) => {
@@ -51,7 +51,7 @@ class WorkSummary extends Component {
             )
           })}
           </ProjectCards>
-        </Container>
+        </IndexContainer>
       </Section>
     )
   }

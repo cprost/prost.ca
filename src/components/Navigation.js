@@ -17,12 +17,11 @@ const StyledLink = styled(Link)`
 `
 
 const BurgerLink = styled(Link)`
-  color: ${theme.colours.midBlue};
+  color: ${theme.colours.midBlueDark};
   text-decoration: none;
 
   &.active-nav {
     color: ${theme.colours.darkBlue};
-    text-shadow: 0 0 1px ${theme.colours.darkBlue};
   }
 `
 

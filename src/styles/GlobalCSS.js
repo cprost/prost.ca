@@ -35,8 +35,8 @@ const GlobalCSS = () => {
         h1 {
           font-size: 70px;
           font-weight: 400;
-          margin-top: 2rem;
-          margin-bottom: 2rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
 
           ${media.medium} {
             font-size: 55px;
@@ -102,6 +102,19 @@ const GlobalCSS = () => {
           ${media.small} {
             font-size: 14px;
           }
+        }
+
+        a {
+          text-decoration: none;
+          color: ${theme.colours.midBlueDark};
+        }
+
+        blockquote {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 1rem;
+          border-left: 0.25rem solid #dfe2e5;
+          color: ${theme.colours.grey};
         }
 
         .fadein-enter {

@@ -37,28 +37,31 @@ const FooterItems = styled.div`
 
 const Copyright = styled.p`
   color: ${theme.colours.dark};
+
+  a {
+    text-decoration: none;
+    color: ${theme.colours.midBlueDark};
+  }
 `
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      {/* <FooterList>
-        <FooterItem>LinkedIn</FooterItem>
-        <FooterItem>GitHub</FooterItem>
-        <FooterItem>Instagram</FooterItem>
-      </FooterList> */}
       <FooterItems>
-        <a href="https://github.com/">
+        <a href="https://github.com/cprost/">
           <LogoGitHub className="social-icon"/>
         </a>
-        <a href="https://github.com/">
+        <a href="https://www.linkedin.com/in/cprost/">
           <LogoLinkedIn className="social-icon"/>
         </a>
-        <a href="https://github.com/">
+        <a href="https://www.instagram.com/">
           <LogoInstagram className="social-icon"/>
         </a>
       </FooterItems>
-      <Copyright>Copyright 2020</Copyright>
+      <Copyright>
+        © 2020 Chris Prost | Built with 
+        <a href="https://gatsbyjs.org/"> Gatsby</a>
+      </Copyright>
     </FooterWrapper>
   )
 }
