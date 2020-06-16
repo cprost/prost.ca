@@ -46,18 +46,23 @@ const PostTitle = styled.h1`
 
 const PostDate = styled.h3`
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   color: ${theme.colours.dark};
 `
 
 const PostContent = styled.div`
+  margin-top: 2rem;
+  ${'' /* border-top: 2px solid ${theme.colours.offWhite}; */}
   line-height: 1.5;
   font-family: ${theme.fonts.Roboto};
   color: ${theme.colours.dark};
 
   h1 {
     font-size: 32px;
-    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 28px;
   }
 
   h1, h2 {
