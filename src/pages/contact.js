@@ -10,7 +10,8 @@ const Contact = () => {
     <Layout>
       <Section>
         <Container>
-          <h1>Yo!</h1>
+          <h2>Contact Information</h2>
+          <p>You can find me on LinkedIn, GitHub, and Instagram below:</p>
         </Container>
       </Section>
     </Layout>

@@ -35,8 +35,8 @@ const GlobalCSS = () => {
         h1 {
           font-size: 70px;
           font-weight: 400;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
 
           ${media.medium} {
             font-size: 55px;
