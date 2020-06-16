@@ -91,6 +91,16 @@ const PostContent = styled.div`
   p {
     font-size: 16px;
   }
+
+  .line-numbers-rows {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-right: 1px solid #666;
+  }
+
+  .gatsby-highlight {
+    margin-bottom: 2rem;
+  }
 `
 
 const BlogPost = (props) => {

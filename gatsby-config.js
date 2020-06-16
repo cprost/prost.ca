@@ -46,7 +46,7 @@ module.exports = {
               classPrefix: "language-",
               inlineCodeMarker: '>',
               aliases: {},
-              showLineNumbers: false,
+              showLineNumbers: true,
               noInlineHighlight: false,
               languageExtensions: [
                 {

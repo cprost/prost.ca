@@ -7,3 +7,4 @@
 // You can delete this file if you're not using it
 
 import './src/styles/prism-nord.css'
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
