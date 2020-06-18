@@ -280,6 +280,34 @@ def lol(what):
 
 var s = "JavaScript syntax highlighting";
 alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
+//with js lang tag
+
+var s = "JavaScript syntax highlighting";
+alert(s);
 ```
 
 ## Span Elements

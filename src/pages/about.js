@@ -19,27 +19,41 @@ export const query = graphql`
   }
 `
 
-const Skill = styled.p`
-  color: ${props => props.color};
+const Skill = styled.span`
+  background-color: ${props => props.color};
+  color: ${theme.colours.light};
+  font-weight: 600;
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 3rem;
+  display: inline-block;
+`
+
+const AboutWrapper = styled.div`
+  p {
+    font-size: 20px;
+  }
 `
 
 const About = ({ data }) => {
   const { skills } = data.about
   const categories = Object.keys(skills)
-  const skillColours = ["#f00", "#0f0", "#00f", "#888"]
+  const skillColours = ["#d42", "#6c4 ", "#27d", "#888"]
 
   return (
     <Layout>
       <Section>
         <Container>
           <h2>About me</h2>
-          <div dangerouslySetInnerHTML={{ __html: data.about.html }}/>
-          {categories.map((category, index) => {
-            const skillList = skills[category]
-            return skillList.map((skill) => (
-              <Skill color={skillColours[index]}>{skill} {index}</Skill>
-            ))
+          <AboutWrapper dangerouslySetInnerHTML={{ __html: data.about.html }}/>
+          {/* <SkillWrapper> */}
+            {categories.map((category, index) => {
+              const skillList = skills[category]
+              return skillList.map((skill) => (
+                <Skill color={skillColours[index]}>{skill}</Skill>
+              ))
           })}
+          {/* </SkillWrapper> */}
         </Container>
       </Section>
     </Layout>
