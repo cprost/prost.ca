@@ -14,10 +14,11 @@ const ProjectCards = styled.div`
   grid-gap: 2rem;
 
   @media screen and (max-width: ${theme.screenSizes.large.value}) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media screen and (max-width: ${theme.screenSizes.small.value}) {
-      grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 

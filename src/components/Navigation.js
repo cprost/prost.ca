@@ -187,7 +187,7 @@ class Navigation extends Component {
             <StyledLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to='/contact' activeClassName={'active-nav'}>Contact</StyledLink>
+            <StyledLink to='/about' activeClassName={'active-nav'}>About</StyledLink>
           </NavItem>
           <NavItem>
             <StyledLink to='/resume' activeClassName={'active-nav'}>Resume</StyledLink>
@@ -204,7 +204,7 @@ class Navigation extends Component {
             <BurgerLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</BurgerLink>
           </h2>
           <h2>
-            <BurgerLink to='/contact' activeClassName={'active-nav'}>Contact</BurgerLink>
+            <BurgerLink to='/about' activeClassName={'active-nav'}>About</BurgerLink>
           </h2>
           <h2>
             <BurgerLink to='/resume' activeClassName={'active-nav'}>Resume</BurgerLink>

@@ -94,14 +94,6 @@ const GlobalCSS = () => {
 
         p {
           font-size: 16px;
-
-          ${media.medium} {
-            font-size: 14px;
-          }
-
-          ${media.small} {
-            font-size: 14px;
-          }
         }
 
         a {

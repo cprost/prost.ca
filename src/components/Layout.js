@@ -5,10 +5,13 @@ import GlobalCSS from '../styles/GlobalCSS'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
+import clouds from '../images/clouds.png'
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url(${clouds});
 `
 
 const Float = styled.div`
@@ -20,7 +23,6 @@ class Layout extends React.Component {
   constructor(props) {
     super(props)
   }
-
 
   render() {
     const { children } = this.props
