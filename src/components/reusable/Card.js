@@ -27,8 +27,8 @@ const CardWrapper = styled.div`
 `
 
 const CardTitle = styled.div`
-  padding: .7rem;
-  ${'' /* background: linear-gradient(${theme.colours.midBlue}, ${theme.colours.lightBlue}); */}
+  padding: 0.7rem;
+
   border-radius: 8px 8px 0 0;
   border-bottom: 1px dashed #ddd;
 
@@ -54,8 +54,6 @@ const Card = React.forwardRef(({ title, img }, ref) => (
     <CardTitle>
       <h4>{title}</h4>
     </CardTitle>
-
-    
     <ImgWrapper>
       <Img 
         fluid={img}

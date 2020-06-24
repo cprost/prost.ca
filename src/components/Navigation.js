@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 import Burger from './BurgerMenu'
-
+import SiteLogo from '../images/site-logo.png'
+// import LogoGitHub from '../images/logo-github'
 import { theme, media } from '../styles'
 
 const StyledLink = styled(Link)`
@@ -85,6 +86,11 @@ const MobileBlur = styled.div`
   }
 `
 
+const Logo = styled.img`
+  padding-top: 5px;
+  height: 40px;
+`
+
 const BurgerMenu = styled.nav`
   position: absolute;
   display: flex;
@@ -123,10 +129,6 @@ class Navigation extends Component {
       active: false,
       scrollAmount: 0,
       scrollPos: 'none',
-      style: {
-        // opacity: 0,
-        // transition: 'all 100ms ease',
-      }
     }
 
     this.toggleActive = this.toggleActive.bind(this)
@@ -134,13 +136,6 @@ class Navigation extends Component {
 
   componentDidMount() {
     this._mounted = true
-    this.setState({
-      style: {
-        // transition: 'all 100ms ease',
-        // transitionDelay: '100ms',
-        // opacity: 1,
-      }
-    })
     window.addEventListener('scroll', () => this.onScroll());
   }
 
@@ -180,7 +175,7 @@ class Navigation extends Component {
 
     return (
       <Nav scrollPos={scrollPos} >
-        <h2><StyledLink to='/'>{"<Chris />"}</StyledLink></h2>
+        <StyledLink to='/'><Logo src={SiteLogo} /></StyledLink>
 
         <NavList>
           <NavItem>
