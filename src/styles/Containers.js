@@ -3,7 +3,7 @@ import theme from './theme'
 import media from './media'
 
 const IndexContainer = styled.div`
-  padding-top: 5rem;
+  padding-top: 2rem;
   padding-bottom: 5rem;
   margin: 0 auto;
   width: 100%;
@@ -15,6 +15,7 @@ const Container = styled.div`
   margin: 2rem auto;
   max-width: ${theme.maxWidthOther};
   background-color: ${theme.colours.light};
+  color: ${theme.colours.dark};
   border: 2px solid ${theme.colours.offWhite};
   border-radius: 0.5rem;
   

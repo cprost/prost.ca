@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import { Container, Section, theme, media } from '../styles'
 
 export const query = graphql`
@@ -58,7 +59,9 @@ const Skill = styled.span`
   margin: 0.5rem 0.5rem;
   padding: 0.5rem 0.6rem;
   border-radius: 3rem;
+  box-shadow: 3px 3px 5px ${props => props.color};
   display: inline-block;
+  text-shadow: 1px 1px 1px ${theme.colours.dark};
 `
 
 const About = ({ data }) => {
@@ -68,15 +71,16 @@ const About = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="About Me" />
       <Section>
-        <Container>
+        <Container >
           <SubSection>
             <h2>About me</h2>
             <div dangerouslySetInnerHTML={{ __html: data.about.html }}/>
             
           </SubSection>
           <SubSection>
-          <h4>Skills</h4>
+          <h3>Skills</h3>
             <SkillWrapper>
               <SkillList>
                 {categories.map((category, index) => {

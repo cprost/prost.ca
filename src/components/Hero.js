@@ -10,6 +10,7 @@ const HeroWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   background: ${theme.colours.midBlue};
+  font-family: Montserrat;
   padding-left: 2rem;
   padding-right: 2rem;
 `
@@ -17,6 +18,7 @@ const HeroWrapper = styled.div`
 const HeroTitle = styled.h1`
   margin-bottom: 0;
   color: ${theme.colours.light};
+  font-weight: 500;
   text-shadow: 1px 1px 0px ${theme.colours.midBlue}, -1px -1px 0px ${theme.colours.midBlue};
 `
 

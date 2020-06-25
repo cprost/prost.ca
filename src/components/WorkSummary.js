@@ -6,6 +6,10 @@ import Card from './reusable/Card'
 
 import { IndexContainer, Section, theme } from '../styles'
 
+const SectionTitle = styled.h2`
+  padding-bottom: 2rem;
+`
+
 const ProjectCards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -39,7 +43,7 @@ class WorkSummary extends Component {
     return (
       <Section>
         <IndexContainer>
-          <p>Placeholder text for work & project summary</p>
+          <SectionTitle>Projects</SectionTitle>
           <ProjectCards>
           {data.map(({ node }, i) => {
             return (

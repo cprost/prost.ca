@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 
 import Burger from './BurgerMenu'
 import SiteLogo from '../images/site-logo.png'
-// import LogoGitHub from '../images/logo-github'
 import { theme, media } from '../styles'
 
 const StyledLink = styled(Link)`
@@ -88,7 +87,11 @@ const MobileBlur = styled.div`
 
 const Logo = styled.img`
   padding-top: 5px;
-  height: 40px;
+  height: 35px;
+
+  ${media.small} {
+    height: 30px;
+  }
 `
 
 const BurgerMenu = styled.nav`
@@ -154,7 +157,7 @@ class Navigation extends Component {
   onScroll() {
     const { scrollAmount, active } = this.state
     const yOffset = window.scrollY
-    const scrollThresh = 10  // minimum scroll pixels to update scroll state
+    const scrollThresh = 25  // minimum scroll pixels to update scroll state
 
     if (Math.abs(scrollAmount - yOffset) <= scrollThresh || active) {
       return  // to prevent menu movement for scrolling less than threshold pixels
@@ -184,9 +187,9 @@ class Navigation extends Component {
           <NavItem>
             <StyledLink to='/about' activeClassName={'active-nav'}>About</StyledLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <StyledLink to='/resume' activeClassName={'active-nav'}>Resume</StyledLink>
-          </NavItem>
+          </NavItem> */}
         </NavList>
 
         <Burger
@@ -201,9 +204,9 @@ class Navigation extends Component {
           <h2>
             <BurgerLink to='/about' activeClassName={'active-nav'}>About</BurgerLink>
           </h2>
-          <h2>
+          {/* <h2>
             <BurgerLink to='/resume' activeClassName={'active-nav'}>Resume</BurgerLink>
-          </h2>
+          </h2> */}
         </BurgerMenu>
 
         <MobileBlur

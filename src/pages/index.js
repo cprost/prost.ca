@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import WorkSummary from '../components/WorkSummary'
 
@@ -9,6 +10,7 @@ import { Gradient } from '../styles'
 
 const IndexPage = ({ data }) => (
     <Layout>
+      <SEO title="Software Developer" />
       <Hero data={data.hero.about} />
       <Gradient />
       <WorkSummary data={data.experience.edges} />

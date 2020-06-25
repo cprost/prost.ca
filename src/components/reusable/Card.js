@@ -32,7 +32,7 @@ const CardTitle = styled.div`
   border-radius: 8px 8px 0 0;
   border-bottom: 1px dashed #ddd;
 
-  h4 {
+  h3 {
     margin: 0.5rem 0;
     font-weight: 600;
     color: ${theme.colours.midBlueDark};
@@ -49,10 +49,21 @@ const CardDesc = styled.div`
   padding: 0 1rem;
 `
 
+const CardLink = styled.a`
+  p {
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+  }
+
+  p:after {
+    content: ' →';
+  }
+`
+
 const Card = React.forwardRef(({ title, img }, ref) => (
   <CardWrapper ref={ref}>
     <CardTitle>
-      <h4>{title}</h4>
+      <h3>{title}</h3>
     </CardTitle>
     <ImgWrapper>
       <Img 
@@ -68,8 +79,10 @@ const Card = React.forwardRef(({ title, img }, ref) => (
     </ImgWrapper>
     <CardDesc>
       <p>Talk about the card's subject</p>
-      <h4 style={{textAlign: 'right'}}>Learn more</h4>
     </CardDesc>
+    <CardLink>
+      <p style={{textAlign: 'right'}}>Learn more</p>
+    </CardLink>
   </CardWrapper>
 ))
 

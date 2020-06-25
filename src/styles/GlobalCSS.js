@@ -34,7 +34,7 @@ const GlobalCSS = () => {
 
         h1 {
           font-size: 70px;
-          font-weight: 400;
+          font-weight: 500;
           margin-top: 0.5rem;
           margin-bottom: 0.5rem;
 
@@ -78,13 +78,13 @@ const GlobalCSS = () => {
         }
 
         h4 {
-          font-size: 24px;
+          font-size: 20px;
           font-weight: 400;
           margin-top: 0.25rem;
           margin-bottom: 0.25rem;
 
           ${media.medium} {
-            font-size: 20px;
+            font-size: 18px;
           }
 
           ${media.small} {

@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import ScrollReveal from 'scrollreveal'
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import { Container, Section, theme, media } from '../styles'
 import Pagination from '../components/Pagination'
 
@@ -99,7 +100,7 @@ const PostTitle = styled.h3`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 700;
+  font-weight: 500;
   font-family: ${theme.fonts.Roboto};
   color: ${theme.colours.midBlueDark};
   padding: 0.5rem 0;
@@ -143,6 +144,7 @@ class BlogPage extends Component {
 
     return (
       <Layout>
+        <SEO title="Blog" />
         <Section>        
           <Container>
           <h2>Recent Blog Posts</h2>

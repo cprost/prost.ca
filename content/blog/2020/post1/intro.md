@@ -1,6 +1,6 @@
 ---
-title: "Welcome to my website"
-description: "tester"
+title: "Automatically Generating Pages from Markdown"
+description: "I test out the generation and styling of blog pages using sample content from Github."
 headerImage: "./grass.png"
 date: "2020-03-05"
 ---
