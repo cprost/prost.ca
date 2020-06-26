@@ -81,7 +81,8 @@ const MobileBlur = styled.div`
 
   &.active {
     pointer-events: auto;
-    opacity: 0.5;
+    opacity: 1;
+    backdrop-filter: blur(2px);
   }
 `
 

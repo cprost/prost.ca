@@ -1,12 +1,12 @@
 ---
-title: "TEST CARD"
+title: "Video Interpolation CNN"
 description: "I did some tech stuff"
 featuredImage: './gatsby-astronaut.png'
 order: 1
 skills: 
-- cpp
-- java
-- python
+- C++
+- Python
+- TensorFlow
 ---
 
 THIS IS A TEST POST

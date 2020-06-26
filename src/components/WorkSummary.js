@@ -50,6 +50,8 @@ class WorkSummary extends Component {
              <div ref={ref => this.cardRefs[i] = ref}>
               <Card 
                 title={node.frontmatter.title}
+                description={node.frontmatter.description}
+                skills={node.frontmatter.skills}
                 img={node.frontmatter.featuredImage.childImageSharp.fluid}
               />
              </div>

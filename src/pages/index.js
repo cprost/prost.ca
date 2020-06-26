@@ -36,6 +36,8 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            description
+            skills
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 600) {
