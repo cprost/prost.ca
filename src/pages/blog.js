@@ -154,7 +154,11 @@ class BlogPage extends Component {
                 <div key={key} ref={ref => this.postRefs[key] = ref}>
                   <PostItem>
                     <PostImg to={`/blog/${post.node.fields.slug}`}>
-                      <Img fluid={post.node.frontmatter.headerImage.childImageSharp.fluid} />
+                      <Img 
+                        fluid={post.node.frontmatter.headerImage.childImageSharp.fluid}
+                        alt={post.node.frontmatter.title}
+                        durationFadeIn={0}
+                      />
                     </PostImg>
                     <PostText to={`/blog/${post.node.fields.slug}`}>
                       <Link

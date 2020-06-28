@@ -1,5 +1,5 @@
 ---
-title: "Hi, I'm Chris."
-subtitle: "I'm a software engineer with a passion for machine learning."
-description: "My favourite languages are Python, C++, and JavaScript. Not Java though."
+title: "Hi, I'm Chris Prost."
+subtitle: "I'm a software developer building financial and web applications."
+description: "Combining data and design is my specialty."
 ---

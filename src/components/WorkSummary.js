@@ -33,7 +33,8 @@ class WorkSummary extends Component {
   }
 
   componentDidMount = () => {
-    this.cardRefs.forEach((ref, i) => ScrollReveal().reveal(ref, theme.scrollReveal(i * 2)));
+    ScrollReveal().reveal(this.refs.title, theme.scrollReveal(0))
+    this.cardRefs.forEach((ref, i) => ScrollReveal().reveal(ref, theme.scrollReveal(i)))
   }
 
   render() {
@@ -43,7 +44,7 @@ class WorkSummary extends Component {
     return (
       <Section>
         <IndexContainer>
-          <SectionTitle>Projects</SectionTitle>
+          <SectionTitle ref="title">Projects</SectionTitle>
           <ProjectCards>
           {data.map(({ node }, i) => {
             return (

@@ -23,14 +23,14 @@ const HeroTitle = styled.h1`
 `
 
 const HeroSubtitle = styled.h3`
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 0;
   color: ${theme.colours.light};
   text-shadow: 0 0 2px ${theme.colours.midBlue}, 0 0 2px ${theme.colours.midBlue};
 `
 
-const HeroDesc = styled.h4`
-  margin-top: 0.75rem;
+const HeroDesc = styled.h3`
+  margin-top: 0.5rem;
   color: ${theme.colours.light};
   text-shadow: 0 0 2px ${theme.colours.midBlue}, 0 0 2px ${theme.colours.midBlue};
 `

@@ -40,8 +40,11 @@ export const query = graphql`
             skills
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
+                fluid (
+                  maxWidth: 600,
+                  quality: 90,
+                  ){
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }

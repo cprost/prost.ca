@@ -89,6 +89,7 @@ const Card = React.forwardRef(({ title, description, skills, img }, ref) => (
     <ImgWrapper>
       <Img 
         fluid={img}
+        alt={title}
         // imgStyle={
         //   { objectFit: 'contain', maxHeight: '200px' } 
         //   /*

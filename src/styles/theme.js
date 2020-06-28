@@ -43,7 +43,7 @@ const theme = {
 
   scrollReveal: (sequence = 1) => {
     return {
-      delay: sequence * 100,
+      delay: (sequence * 200) + 300,
       origin: 'bottom',
       distance: '1.5rem',
       duration: '400',
