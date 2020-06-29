@@ -1,19 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from '@emotion/styled'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import WorkSummary from '../components/WorkSummary'
 
-import { Gradient } from '../styles'
+import { Section, EdgeTop, EdgeBottom, theme } from '../styles'
+
+const IndexSection = styled(Section)`
+  margin-top: 0;
+  background-color: ${theme.colours.light};
+`
 
 const IndexPage = ({ data }) => (
   <Layout index={true}>
     <SEO title="Software Developer" />
     <Hero data={data.hero.about} />
-    <Gradient />
-    <WorkSummary data={data.experience.edges} />
+    <EdgeTop />
+    <IndexSection>
+      <WorkSummary data={data.experience.edges} />
+    </IndexSection>
+    <EdgeBottom />
   </Layout>
 )
 

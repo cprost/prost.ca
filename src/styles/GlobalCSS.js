@@ -128,8 +128,13 @@ const GlobalCSS = () => {
           path {
             fill: ${theme.colours.midBlue};
           }
-        }
 
+          &.index {
+            path {
+              fill: ${theme.colours.light};
+            };
+          }
+        }
       `}
     />
   )

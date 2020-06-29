@@ -41,25 +41,23 @@ class WorkSummary extends Component {
     const { data } = this.props
 
     return (
-      <Section>
-        <IndexContainer>
-          <SectionTitle ref="title">Projects</SectionTitle>
-          <ProjectCards>
-          {data.map(({ node }, i) => {
-            return (
-             <div ref={ref => this.cardRefs[i] = ref}>
-              <Card 
-                title={node.frontmatter.title}
-                description={node.frontmatter.description}
-                skills={node.frontmatter.skills}
-                img={node.frontmatter.featuredImage.childImageSharp.fluid}
-              />
-             </div>
-            )
-          })}
-          </ProjectCards>
-        </IndexContainer>
-      </Section>
+      <IndexContainer>
+        <SectionTitle ref="title">Projects</SectionTitle>
+        <ProjectCards>
+        {data.map(({ node }, i) => {
+          return (
+            <div ref={ref => this.cardRefs[i] = ref}>
+            <Card 
+              title={node.frontmatter.title}
+              description={node.frontmatter.description}
+              skills={node.frontmatter.skills}
+              img={node.frontmatter.featuredImage.childImageSharp.fluid}
+            />
+            </div>
+          )
+        })}
+        </ProjectCards>
+      </IndexContainer>
     )
   }
 }

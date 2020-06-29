@@ -31,8 +31,27 @@ const params = {
         minimumValue: 0.5,
       }
     },
+    move: {
+      bounce: false,
+      out_mode: 'out',
+    },
     line_linked: {
       enable: false,
+    },
+  },
+  interactivity: {
+    detect_on: 'window',
+    events: {
+      onclick: {
+        enable: true,
+        mode: 'repulse',
+      }
+    },
+    modes: {
+      repulse: {
+        distance: 150,
+        duration: 0.8,
+      }
     }
   }
 }

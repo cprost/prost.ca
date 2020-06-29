@@ -19,11 +19,12 @@ const HeroWrapper = styled.div`
 
 const ParticleBackground = styled(Particles)`
   position: absolute;
-  height: 100vh;
+  height: calc(100vh + 8rem);
   width: 100vw;
   left: 0;
   opacity: ${props => props.isMounted ? 1 : 0};
-  transition: 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  background-color: ${theme.colours.midBlue};
 `
 
 const HeroTitle = styled.h1`

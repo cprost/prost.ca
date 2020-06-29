@@ -2,6 +2,7 @@ import React from "react"
 import styled from '@emotion/styled'
 
 import GlobalCSS from '../styles/GlobalCSS'
+import { theme } from '../styles/'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
@@ -11,7 +12,8 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(${clouds});
+  background-color: ${theme.colours.midBlue};
+  background-image: ${props => props.index ? '' : `url(${clouds})`};
 `
 
 const Float = styled.div`
@@ -29,12 +31,12 @@ class Layout extends React.Component {
     const { children } = this.props
 
     return (
-      <Main >
+      <Main index={this.props.index}>
         <GlobalCSS />
         <Navigation index={this.props.index} />
         {children}
         <Float>
-          <Footer />
+          <Footer index={this.props.index} />
         </Float>
       </Main>
     )

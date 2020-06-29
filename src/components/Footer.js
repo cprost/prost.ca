@@ -36,31 +36,32 @@ const FooterItems = styled.div`
 `
 
 const Copyright = styled.p`
-  color: ${theme.colours.dark};
+  color: ${props => props.index ? theme.colours.light : theme.colours.dark};
 
   a {
     text-decoration: none;
-    color: ${theme.colours.midBlueDark};
+    color: ${props => props.index ? theme.colours.light : theme.colours.midBlueDark};
   }
 `
 
-const Footer = () => {
+const Footer = (props) => {
+
   return (
     <FooterWrapper>
-      <FooterItems>
+      <FooterItems >
         <a href="https://github.com/cprost/">
-          <LogoGitHub className="social-icon"/>
+          <LogoGitHub className={props.index ? 'social-icon index' : 'social-icon'}/>
         </a>
         <a href="https://www.linkedin.com/in/cprost/">
-          <LogoLinkedIn className="social-icon"/>
+          <LogoLinkedIn className={props.index ? 'social-icon index' : 'social-icon'}/>
         </a>
         <a href="https://www.instagram.com/">
-          <LogoInstagram className="social-icon"/>
+          <LogoInstagram className={props.index ? 'social-icon index' : 'social-icon'}/>
         </a>
       </FooterItems>
-      <Copyright>
+      <Copyright index={props.index}>
         © 2020 Chris Prost | Built with 
-        <a href="https://gatsbyjs.org/"> Gatsby</a>
+        <a href="https://gatsbyjs.org/" > Gatsby</a>
       </Copyright>
     </FooterWrapper>
   )
