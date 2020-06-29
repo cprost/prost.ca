@@ -8,6 +8,7 @@ const IndexContainer = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: ${theme.maxWidthIndex};
+  z-index: 2;
 `
 
 const Container = styled.div`

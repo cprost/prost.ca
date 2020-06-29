@@ -9,12 +9,12 @@ import WorkSummary from '../components/WorkSummary'
 import { Gradient } from '../styles'
 
 const IndexPage = ({ data }) => (
-    <Layout>
-      <SEO title="Software Developer" />
-      <Hero data={data.hero.about} />
-      <Gradient />
-      <WorkSummary data={data.experience.edges} />
-    </Layout>
+  <Layout index={true}>
+    <SEO title="Software Developer" />
+    <Hero data={data.hero.about} />
+    <Gradient />
+    <WorkSummary data={data.experience.edges} />
+  </Layout>
 )
 
 export default IndexPage

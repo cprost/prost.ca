@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 
-import { theme } from '../../styles'
+import { theme, media } from '../../styles'
 
 const CardWrapper = styled.div`
   border-radius: 8px;
@@ -63,8 +63,15 @@ const CardSkills = styled.ul`
   li {
     color: ${theme.colours.grey};
     font-family: monospace;
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 1rem;
+  }
+
+  ${media.small} {
+    li {
+      margin-left: 0.5rem;
+      font-size: 13px;
+    }
   }
 `
 

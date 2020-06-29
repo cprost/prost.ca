@@ -36,10 +36,10 @@ const Nav = styled.nav`
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
-  background: ${theme.colours.midBlue};
+  background: ${props => (props.scrollPos === 'top' && props.index) ? 'transparent' : theme.colours.midBlue };
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
-  z-index: 10;
+  z-index: 3;
 
   h2 {
     white-space: nowrap;
@@ -77,12 +77,12 @@ const MobileBlur = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.25s ease-in-out;
   opacity: 0;
-  z-index: -1;
 
   &.active {
     pointer-events: auto;
     opacity: 1;
     backdrop-filter: blur(2px);
+    z-index: 4;
   }
 `
 
@@ -108,6 +108,7 @@ const BurgerMenu = styled.nav`
   right: 0;
   transition: transform 0.4s ease-in-out;
   transform: translateX(100%);
+  z-index: 5;
 
   &.active {
     transform: translateX(0%);
@@ -132,7 +133,7 @@ class Navigation extends Component {
     this.state = {
       active: false,
       scrollAmount: 0,
-      scrollPos: 'none',
+      scrollPos: 'top',
     }
 
     this.toggleActive = this.toggleActive.bind(this)
@@ -178,9 +179,8 @@ class Navigation extends Component {
     const toggleActive = this.toggleActive
 
     return (
-      <Nav scrollPos={scrollPos} >
+      <Nav scrollPos={scrollPos} index={this.props.index} >
         <StyledLink to='/'><Logo src={SiteLogo} /></StyledLink>
-
         <NavList>
           <NavItem>
             <StyledLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</StyledLink>
@@ -188,16 +188,12 @@ class Navigation extends Component {
           <NavItem>
             <StyledLink to='/about' activeClassName={'active-nav'}>About</StyledLink>
           </NavItem>
-          {/* <NavItem>
-            <StyledLink to='/resume' activeClassName={'active-nav'}>Resume</StyledLink>
-          </NavItem> */}
         </NavList>
-
         <Burger
           active={active}
           toggleActive={toggleActive}
-          className={`${active ? 'active' : ''}`}/>
-
+          className={`${active ? 'active' : ''}`}
+        />
         <BurgerMenu className={`${active ? 'active' : ''}`} >
           <h2>
             <BurgerLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</BurgerLink>
@@ -205,14 +201,11 @@ class Navigation extends Component {
           <h2>
             <BurgerLink to='/about' activeClassName={'active-nav'}>About</BurgerLink>
           </h2>
-          {/* <h2>
-            <BurgerLink to='/resume' activeClassName={'active-nav'}>Resume</BurgerLink>
-          </h2> */}
         </BurgerMenu>
-
         <MobileBlur
           onClick={() => this.setState({active: false})}
-          className={`${active ? 'active' : ''}`}/>
+          className={`${active ? 'active' : ''}`}
+        />
       </Nav>
     )
   }

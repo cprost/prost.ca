@@ -22,6 +22,7 @@ const Float = styled.div`
 class Layout extends React.Component {
   constructor(props) {
     super(props)
+    console.log(props)
   }
 
   render() {
@@ -30,7 +31,7 @@ class Layout extends React.Component {
     return (
       <Main >
         <GlobalCSS />
-        <Navigation />
+        <Navigation index={this.props.index} />
         {children}
         <Float>
           <Footer />
