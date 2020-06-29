@@ -9,6 +9,7 @@ import { theme, media } from '../styles'
 const StyledLink = styled(Link)`
   color: ${theme.colours.offWhite};
   text-decoration: none;
+  outline: none;
 
   &.active-nav {
     color: ${theme.colours.offWhite};

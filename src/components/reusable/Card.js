@@ -5,37 +5,32 @@ import Img from 'gatsby-image'
 import { theme, media } from '../../styles'
 
 const CardWrapper = styled.div`
-  border-radius: 8px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4), 10px 10px 5px 0 rgba(0, 0, 0, 0.15);
-  transition: all 0.5s ease-in-out;
   background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-shadow: ${theme.shadows.card};
+  font-family: ${theme.fonts.Roboto};
+  transition: all 0.4s ease-in-out;
 
   .gatsby-image-wrapper {
-    transition: all 0.3s ease-in-out;
+    border-radius: 4px 4px 0 0;
   }
 
   &:hover {
-    box-shadow: 0 0 8px ${theme.colours.midBlue}, 10px 10px 5px 0 rgba(0, 0, 0, 0.15);
-    transition: all 0.1s ease-in-out;
+    box-shadow: ${theme.shadows.cardHover};
+    transition: all 0.4s ease-in-out;
 
-    .gatsby-image-wrapper {
-      transform: scale(1.05);
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 4px ${theme.colours.midBlue};
+    .card-desc {
+      background-color: ${theme.colours.offWhite};
+      border-radius: 0 0 4px 4px;
     }
   }
 `
 
-const CardTitle = styled.div`
-  padding: 0.7rem;
-
-  border-radius: 8px 8px 0 0;
-
-  h4 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-    color: ${theme.colours.midBlueDark};
-  }
+const CardTitle = styled.h4`
+  margin: 0.5rem 0;
+  font-weight: 500;
+  color: ${theme.colours.midBlue};
 `
 
 const ImgWrapper = styled.div`
@@ -45,17 +40,19 @@ const ImgWrapper = styled.div`
 `
 
 const CardDesc = styled.div`
-  padding: 0 1rem;
-`
+  padding: 1rem;
+  transition: all 0.4s ease-in-out;
 
-const SkillsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1rem;
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    opacity: 0.7;
+  }
 `
 
 const CardSkills = styled.ul`
-  padding-left: 1rem;
+  margin-top: 0rem;
+  padding-left: 0rem;
   display: flex;
   flex-direction: row;
   list-style-type: none;
@@ -64,35 +61,20 @@ const CardSkills = styled.ul`
     color: ${theme.colours.grey};
     font-family: monospace;
     font-size: 14px;
-    margin-left: 1rem;
-  }
-
-  ${media.small} {
-    li {
-      margin-left: 0.5rem;
-      font-size: 13px;
-    }
+    margin-right: 1rem;
   }
 `
 
 const CardLink = styled.a`
-  padding: 0.75rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  white-space: nowrap;
-  color: ${theme.colours.midBlueDark};
-  background-color: ${theme.colours.light};
-  border: 2px solid ${theme.colours.midBlue};
-  border-radius: 0.5rem;
-  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-  font-weight: 700;
+  padding: 1rem;
+  display: flex;
+  justify-content: right;
+  font-weight: 500;
+  color: ${theme.colours.midBlue};
 `
 
 const Card = React.forwardRef(({ title, description, skills, img }, ref) => (
   <CardWrapper ref={ref}>
-    <CardTitle>
-      <h4>{title}</h4>
-    </CardTitle>
     <ImgWrapper>
       <Img 
         fluid={img}
@@ -106,19 +88,20 @@ const Card = React.forwardRef(({ title, description, skills, img }, ref) => (
         // }
       /> 
     </ImgWrapper>
-    <CardDesc>
-      <p>{description}</p>
-    </CardDesc>
-    <SkillsWrapper>
+    <CardDesc className="card-desc">
+      <CardTitle>
+        {title}
+      </CardTitle>
       <CardSkills>
         {skills.map((skill, index) => {
           return <li>{skill}</li>
         })}
       </CardSkills>
-      <CardLink>
-        More →
+      <p>{description}</p>
+    </CardDesc>
+    <CardLink>
+        LEARN MORE →
       </CardLink>
-    </SkillsWrapper>
   </CardWrapper>
 ))
 

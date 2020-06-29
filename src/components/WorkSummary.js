@@ -4,9 +4,10 @@ import ScrollReveal from 'scrollreveal'
 
 import Card from './reusable/Card'
 
-import { IndexContainer, Section, theme } from '../styles'
+import { IndexContainer, theme } from '../styles'
 
 const SectionTitle = styled.h2`
+  font-family: ${theme.fonts.Roboto};
   padding-bottom: 2rem;
 `
 

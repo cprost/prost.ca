@@ -61,7 +61,7 @@ const Footer = (props) => {
       </FooterItems>
       <Copyright index={props.index}>
         © 2020 Chris Prost | Built with 
-        <a href="https://gatsbyjs.org/" > Gatsby</a>
+        <a href="https://gatsbyjs.org/"> Gatsby</a>
       </Copyright>
     </FooterWrapper>
   )

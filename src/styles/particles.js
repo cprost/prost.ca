@@ -11,7 +11,7 @@ const params = {
       value: '#FFFFFF',
     },
     size: {
-      value: 30,
+      value: 50,
       random: true,
       anim: {
         enable: true,

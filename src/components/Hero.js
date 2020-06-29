@@ -31,20 +31,20 @@ const HeroTitle = styled.h1`
   margin-bottom: 0;
   color: ${theme.colours.light};
   font-weight: 500;
-  text-shadow: 1px 1px 0px ${theme.colours.midBlue}, -1px -1px 0px ${theme.colours.midBlue};
+  text-shadow: 0 0 1px ${theme.colours.midBlue};
 `
 
 const HeroSubtitle = styled.h3`
   margin-top: 1rem;
   margin-bottom: 0;
   color: ${theme.colours.light};
-  text-shadow: 0 0 2px ${theme.colours.midBlue}, 0 0 2px ${theme.colours.midBlue};
+  text-shadow: 1px 1px 2px ${theme.colours.midBlue}, -1px -1px 2px ${theme.colours.midBlue};
 `
 
 const HeroDesc = styled.h3`
   margin-top: 0.5rem;
   color: ${theme.colours.light};
-  text-shadow: 0 0 2px ${theme.colours.midBlue}, 0 0 2px ${theme.colours.midBlue};
+  text-shadow: 1px 1px 2px ${theme.colours.midBlue}, -1px -1px 2px ${theme.colours.midBlue};
 `
 
 const Hero = ({data}) => {

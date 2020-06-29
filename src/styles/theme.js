@@ -38,7 +38,12 @@ const theme = {
     light: "#faffff",
     dark: "#2d353d",
     grey: "#6a737d",
-    offWhite: "#f0f0f0",
+    offWhite: "#f6f6f6",
+  },
+
+  shadows: {
+    card: '0 0 10px 2px rgba(0, 0, 0, 0.08), -4px 6px 8px 2px rgba(0, 0, 0, 0.05), 4px 6px 8px 2px rgba(0, 0, 0, 0.05)',
+    cardHover: '0 0 10px 2px rgba(0, 0, 0, 0.1), -4px 6px 8px 2px rgba(0, 0, 0, 0.12), 4px 6px 8px 2px rgba(0, 0, 0, 0.12)',
   },
 
   scrollReveal: (sequence = 1) => {
