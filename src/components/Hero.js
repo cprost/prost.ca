@@ -15,7 +15,6 @@ const HeroWrapper = styled.div`
   font-family: Montserrat;
   padding-left: 2rem;
   padding-right: 2rem;
-
 `
 
 const ParticleBackground = styled(Particles)`
@@ -23,6 +22,8 @@ const ParticleBackground = styled(Particles)`
   height: 100vh;
   width: 100vw;
   left: 0;
+  opacity: ${props => props.isMounted ? 1 : 0};
+  transition: 2s ease-in-out;
 `
 
 const HeroTitle = styled.h1`
@@ -49,7 +50,7 @@ const Hero = ({data}) => {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setIsMounted(true), 500)
+    setTimeout(() => setIsMounted(true), 200)
   }, []);
 
   const title = <HeroTitle style={{ transitionDelay: '200ms' }}>{data.title}</HeroTitle>
@@ -60,7 +61,7 @@ const Hero = ({data}) => {
 
   return (
     <HeroWrapper>
-      <ParticleBackground params={params} />
+      <ParticleBackground params={params} isMounted={isMounted} />
       <IndexContainer>
       <TransitionGroup>
         {isMounted && heroItems.map((node, i) => (
