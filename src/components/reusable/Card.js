@@ -19,6 +19,7 @@ const CardWrapper = styled.div`
   &:hover {
     box-shadow: ${theme.shadows.cardHover};
     transition: all 0.4s ease-in-out;
+    transform: scale(1.02);
 
     .card-desc {
       background-color: ${theme.colours.offWhite};

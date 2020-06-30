@@ -10,7 +10,7 @@ import WorkSummary from '../components/WorkSummary'
 import { Section, IndexContainer, EdgeTop, EdgeBottom, theme } from '../styles'
 
 const IndexSection = styled(Section)`
-  margin-top: 0;
+  margin-top: -0.25rem;
   background-color: ${theme.colours.light};
 
   &.alt {
@@ -35,7 +35,7 @@ const IndexPage = ({ data }) => (
     <IndexSection className="alt">
       <IndexContainer>
       	<h3>A little bit about me:</h3>
-        <h4>Maybe add a photo here next to a few blurbs about my work.</h4>
+        <h4>Maybe add a photo here next to a few blurbs about my work, and reveal on scroll.</h4>
       </IndexContainer>
     </IndexSection>
     <EdgeTop />

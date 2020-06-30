@@ -4,7 +4,7 @@ import media from './media'
 
 const IndexContainer = styled.div`
   padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
   margin: 0 auto;
   width: 100%;
   max-width: ${theme.maxWidthIndex};
