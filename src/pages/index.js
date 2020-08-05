@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => (
     <EdgeBottom />
     <IndexSection className="alt">
       <IndexContainer>
-      	<h3>Want to work together?</h3>
+      	<h3 style={{paddingBottom: '1rem'}}>Want to work together?</h3>
         <h4>
           Send me an email or message via LinkedIn regarding your project's expected timeline and deliverables.
           I'm also available for full-time work, especially for roles in machine learning or data science.
@@ -70,6 +70,7 @@ export const query = graphql`
             title
             description
             skills
+            extLink
             featuredImage {
               childImageSharp {
                 fluid (

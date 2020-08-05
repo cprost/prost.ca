@@ -54,6 +54,7 @@ class WorkSummary extends Component {
               description={node.frontmatter.description}
               skills={node.frontmatter.skills}
               img={node.frontmatter.featuredImage.childImageSharp.fluid}
+              ext={node.frontmatter.extLink}
             />
             </div>
           )

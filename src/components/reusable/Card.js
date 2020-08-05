@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 
-import { theme, media } from '../../styles'
+import { theme } from '../../styles'
 
 const CardWrapper = styled.div`
   background-color: white;
@@ -75,7 +75,7 @@ const CardLink = styled.a`
   color: ${theme.colours.midBlue};
 `
 
-const Card = React.forwardRef(({ title, description, skills, img }, ref) => (
+const Card = React.forwardRef(({ title, description, skills, img, ext }, ref) => (
   <CardWrapper ref={ref}>
     <ImgWrapper>
       <Img 
@@ -101,7 +101,7 @@ const Card = React.forwardRef(({ title, description, skills, img }, ref) => (
       </CardSkills>
       <p>{description}</p>
     </CardDesc>
-    <CardLink>
+    <CardLink href={ext}>
         LEARN MORE →
       </CardLink>
   </CardWrapper>
