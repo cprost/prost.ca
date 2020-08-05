@@ -1,12 +1,10 @@
 ---
-title: "TEST CARD TWO"
-description: "I did MORE tech stuff"
-featuredImage: './gatsby-astronaut.png'
+title: "Personal Website"
+description: "My React-based personal website built from scratch, using the GatsbyJS static framework for lightning-fast performance."
+featuredImage: './website.png'
 order: 2
 skills: 
-- lll
-- jjj
-- iii
+- React
+- Gatsby
+- GraphQL
 ---
-
-THIS IS ANOTHER TEST POST

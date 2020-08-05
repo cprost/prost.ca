@@ -9,6 +9,7 @@ import { IndexContainer, theme } from '../styles'
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.Roboto};
   padding-bottom: 2rem;
+  opacity: 0.75;
 `
 
 const ProjectCards = styled.div`
@@ -43,7 +44,7 @@ class WorkSummary extends Component {
 
     return (
       <IndexContainer>
-        <SectionTitle ref="title">Projects</SectionTitle>
+        <SectionTitle ref="title">Recent Open-Source Projects</SectionTitle>
         <ProjectCards>
         {data.map(({ node }, i) => {
           return (

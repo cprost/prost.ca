@@ -34,15 +34,18 @@ const IndexPage = ({ data }) => (
     <EdgeBottom />
     <IndexSection className="alt">
       <IndexContainer>
-      	<h3>A little bit about me:</h3>
-        <h4>Maybe add a photo here next to a few blurbs about my work, and reveal on scroll.</h4>
+      	<h3>Want to work together?</h3>
+        <h4>
+          Send me an email or message via LinkedIn regarding your project's expected timeline and deliverables.
+          I'm also available for full-time work, especially for roles in machine learning or data science.
+        </h4>
       </IndexContainer>
     </IndexSection>
-    <EdgeTop />
+    {/* <EdgeTop />
     <IndexSection>
       <WorkSummary data={data.experience.edges} />
     </IndexSection>
-    <EdgeBottom />
+    <EdgeBottom /> */}
   </Layout>
 )
 

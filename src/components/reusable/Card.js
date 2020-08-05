@@ -36,7 +36,7 @@ const CardTitle = styled.h4`
 
 const ImgWrapper = styled.div`
   .gatsby-image-wrapper {
-    max-height: 215px;
+    height: 215px;
   }
 `
 
@@ -45,6 +45,7 @@ const CardDesc = styled.div`
   transition: all 0.4s ease-in-out;
 
   p {
+    min-height: 60px;
     margin-top: 1rem;
     margin-bottom: 0;
     opacity: 0.7;
