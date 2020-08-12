@@ -77,7 +77,7 @@ export const query = graphql`
                   maxWidth: 600,
                   quality: 90,
                   ){
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

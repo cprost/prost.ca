@@ -1,10 +1,9 @@
 ---
-title: 'Neural Network Image Compression'
-description: "A neural network that extracts an image's salient features, and reproduces the image from the compressed intermediate."
-featuredImage: './gatsby-astronaut.png'
+title: 'YouTube Playlist Length Display'
+description: "A small browser-agnostic extension that restores the now-removed playlist length feature for YouTube."
+featuredImage: './demo-firefox.png'
 order: 3
-extLink: 'https://github.com/cprost/nn-image-compression'
+extLink: 'https://github.com/cprost/youtube-playlist-length/'
 skills: 
-- Python
-- Tensorflow
+- JavaScript
 ---

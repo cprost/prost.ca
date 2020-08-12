@@ -85,7 +85,7 @@ const PostContent = styled.div`
   ul, li {
     font-size: 16px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
 
     p {
       margin: 0;

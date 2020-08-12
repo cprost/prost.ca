@@ -28,7 +28,7 @@ export const query = graphql`
             date,
             headerImage {
               childImageSharp {
-                fluid (maxWidth: 600) {
+                fluid (maxWidth: 1200) {
                   ...GatsbyImageSharpFluid
                 }
               }
