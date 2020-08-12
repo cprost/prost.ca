@@ -1,10 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
-import { Container, Section, Buffer, theme, media } from '../styles'
+import { Container, Section, theme, media } from '../styles'
 
 export const query = graphql`
   query($slug: String) {
@@ -114,7 +113,6 @@ const BlogPost = (props) => {
     <Layout>
       <Section>
         <PostContainer>
-          {/* <Img fluid={markdown.frontmatter.headerImage.childImageSharp.fluid} /> */}
           <PostTitle>{markdown.frontmatter.title}</PostTitle>
           <PostDate>{markdown.frontmatter.date}</PostDate>
           <PostContent dangerouslySetInnerHTML={{ __html: markdown.html }} />

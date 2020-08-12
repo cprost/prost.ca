@@ -8,5 +8,3 @@ skills:
 - Python
 - Tensorflow
 ---
-
-LOTSA WORDS

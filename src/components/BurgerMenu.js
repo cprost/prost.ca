@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from '@emotion/styled'
 
-import { theme, media } from '../styles'
+import { theme } from '../styles'
 
 // followed this as a guideline for the burger menu:
 // https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/

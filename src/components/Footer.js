@@ -14,17 +14,6 @@ const FooterWrapper = styled.footer`
   text-align: center;
 `
 
-const FooterList = styled.ul`
-  padding: 0;
-  display: inline-block;
-  list-style-type: none;
-`
-
-const FooterItem = styled.li`
-  float: left;
-  padding: 0 1rem;
-`
-
 const FooterItems = styled.div`
 
   display: inline-block;
