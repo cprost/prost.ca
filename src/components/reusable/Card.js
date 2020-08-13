@@ -6,9 +6,8 @@ import { theme } from '../../styles'
 
 const CardWrapper = styled.div`
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
-  box-shadow: ${theme.shadows.card};
+  box-shadow: ${theme.shadows.light};
   font-family: ${theme.fonts.Roboto};
   transition: all 0.4s ease-in-out;
 
@@ -17,21 +16,15 @@ const CardWrapper = styled.div`
   }
 
   &:hover {
-    box-shadow: ${theme.shadows.cardHover};
+    box-shadow: ${theme.shadows.dark};
     transition: all 0.4s ease-in-out;
-    transform: scale(1.02);
-
-    .card-desc {
-      background-color: ${theme.colours.offWhite};
-      border-radius: 0 0 4px 4px;
-    }
   }
 `
 
 const CardTitle = styled.h4`
   margin: 0.5rem 0;
   font-weight: 500;
-  color: ${theme.colours.midBlue};
+  color: ${theme.colours.palette700};
 `
 
 const ImgWrapper = styled.div`
@@ -60,7 +53,7 @@ const CardSkills = styled.ul`
   list-style-type: none;
 
   li {
-    color: ${theme.colours.grey};
+    color: ${theme.colours.palette400};
     font-family: monospace;
     font-size: 14px;
     margin-right: 1rem;
@@ -72,7 +65,7 @@ const CardLink = styled.a`
   display: flex;
   justify-content: right;
   font-weight: 500;
-  color: ${theme.colours.midBlue};
+  color: ${theme.colours.hilite200};
 `
 
 const Card = React.forwardRef(({ title, description, skills, img, ext }, ref) => (
@@ -81,13 +74,6 @@ const Card = React.forwardRef(({ title, description, skills, img, ext }, ref) =>
       <Img 
         fluid={img}
         alt={title}
-        // imgStyle={
-        //   { objectFit: 'contain', maxHeight: '200px' } 
-        //   /*
-        //     counteracts gatsby img from filling then getting cropped by parent 
-        //     FUTURE : adjust for 16:9 aspect ratio images?
-        //   */ 
-        // }
       /> 
     </ImgWrapper>
     <CardDesc className="card-desc">

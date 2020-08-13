@@ -7,22 +7,22 @@ import SiteLogo from '../images/site-logo.png'
 import { theme, media } from '../styles'
 
 const StyledLink = styled(Link)`
-  color: ${theme.colours.offWhite};
+  color: ${theme.colours.palette100};
   text-decoration: none;
   outline: none;
 
   &.active-nav {
-    color: ${theme.colours.offWhite};
+    color: ${theme.colours.palette100};
     font-weight: 700;
   }
 `
 
 const BurgerLink = styled(Link)`
-  color: ${theme.colours.midBlueDark};
+  color: ${theme.colours.palette300};
   text-decoration: none;
 
   &.active-nav {
-    color: ${theme.colours.darkBlue};
+    color: ${theme.colours.palette600};
   }
 `
 
@@ -37,7 +37,7 @@ const Nav = styled.nav`
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
-  background: ${props => (props.scrollPos === 'top' && props.index) ? 'transparent' : theme.colours.midBlue };
+  background: ${props => (props.scrollPos === 'top' && props.index) ? 'transparent' : theme.colours.palette600 };
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
   z-index: 3;
@@ -101,7 +101,7 @@ const BurgerMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: ${theme.colours.offWhite};
+  background-color: ${theme.colours.palette100};
   height: 100vh;
   text-align: left;
   padding: 0 1rem;

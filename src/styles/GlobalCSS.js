@@ -29,7 +29,7 @@ const GlobalCSS = () => {
         body {
           margin: 0;
           position: relative;
-          background-color: ${theme.colours.light};
+          background-color: ${theme.colours.palette100};
         }
 
         h1 {
@@ -98,15 +98,7 @@ const GlobalCSS = () => {
 
         a {
           text-decoration: none;
-          color: ${theme.colours.midBlueDark};
-        }
-
-        blockquote {
-          margin-left: 0;
-          margin-right: 0;
-          padding-left: 1rem;
-          border-left: 0.25rem solid #dfe2e5;
-          color: ${theme.colours.grey};
+          color: ${theme.colours.hilite200};
         }
 
         .fadein-enter {
@@ -119,21 +111,6 @@ const GlobalCSS = () => {
           transform: translateY(0);
           transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
           opacity: 1;
-        }
-
-        .social-icon {
-          width: 32px;
-          height: 32px;
-
-          path {
-            fill: ${theme.colours.midBlue};
-          }
-
-          &.index {
-            path {
-              fill: ${theme.colours.light};
-            };
-          }
         }
       `}
     />

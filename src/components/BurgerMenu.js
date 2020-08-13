@@ -27,14 +27,14 @@ export const BurgerButton = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${theme.colours.light};
+    background: ${theme.colours.palette300};
     border-radius: 5px;
     transition: all 0.2s linear;
     position: relative;
     transform-origin: 1px;
 
     &.active {
-      background: ${theme.colours.midBlue};
+      background: ${theme.colours.palette600};
     }
 
     &.active:nth-child(1) {

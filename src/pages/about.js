@@ -14,6 +14,7 @@ export const query = graphql`
         frameworks
         libraries
         databases
+        other
       }
       html
     }
@@ -39,12 +40,12 @@ const SkillList = styled.div`
 const SkillCategories = styled.ul`
   width: 25%;
   margin-top: 0;
-  padding-top: 1rem;
-  border-left: 2px solid ${theme.colours.offWhite};
+  padding-top: 0.5rem;
+  border-left: 2px solid ${theme.colours.palette200};
   font-weight: 600;
 
   li {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   ${media.small} {
@@ -54,20 +55,24 @@ const SkillCategories = styled.ul`
 
 const Skill = styled.span`
   background-color: ${props => props.color};
-  color: ${theme.colours.light};
+  color: ${theme.colours.palette100};
   font-weight: 600;
-  margin: 0.5rem 0.5rem;
+  margin: 0.5rem 1rem 0.5rem 0;
   padding: 0.5rem 0.6rem;
   border-radius: 3rem;
   box-shadow: 3px 3px 5px ${props => props.color};
   display: inline-block;
-  text-shadow: 1px 1px 1px ${theme.colours.dark};
+  text-shadow: 1px 1px 1px ${theme.colours.palette600};
+
+  ${media.small} {
+    margin: 0.25rem 1rem 0.25rem 0;
+  }
 `
 
 const About = ({ data }) => {
   const { skills } = data.about
   const categories = Object.keys(skills)
-  const skillColours = ["#d42", "#6c4 ", "#27d", "#888"]
+  const skillColours = ["#c53", "#6c4 ", "#27d", "#d92", "#798"]
 
   return (
     <Layout>

@@ -13,7 +13,7 @@ const theme = {
       value: '600px'
     },
     medium: {
-      // needs two selectors in media.js
+      // needs two selectors in media.js #9F513C
       value: ['600px', '1023px']
     },
     large: {
@@ -28,22 +28,21 @@ const theme = {
   },
 
   colours: {
-    midBlue: "#4596b9",
-    midBlueDark: "#3d88a8",
-    lightBlue: "#99bbcc",
-    lighterBlue: "#a2cadc",
-    lightestBlue: "#cff8ff",
-    darkestBlue: "#0a2766",
-    darkBlue: "#124d7f",
-    light: "#faffff",
-    dark: "#2d353d",
-    grey: "#6a737d",
-    offWhite: "#f6f6f6",
+    palette100: "#f2f4f8",
+    palette200: "#cad5e2",
+    palette300: "#a2b5cd",
+    palette400: "#7a96b8",
+    palette500: "#56779f",
+    palette600: "#405977",
+    palette700: "#2b3b50",
+    palette800: "#151e28",
+    hilite200: "#f78464",
+    hilite400: "#b84425",
   },
 
   shadows: {
-    card: '0 0 10px 2px rgba(0, 0, 0, 0.08), -4px 6px 8px 2px rgba(0, 0, 0, 0.05), 4px 6px 8px 2px rgba(0, 0, 0, 0.05)',
-    cardHover: '0 0 10px 2px rgba(0, 0, 0, 0.1), -4px 6px 8px 2px rgba(0, 0, 0, 0.12), 4px 6px 8px 2px rgba(0, 0, 0, 0.12)',
+    light: '0 5px 8px #a2b5cd',
+    dark: '0 5px 8px #405977',
   },
 
   scrollReveal: (sequence = 1) => {

@@ -28,7 +28,7 @@ export const query = graphql`
             date,
             headerImage {
               childImageSharp {
-                fluid (maxWidth: 1200) {
+                fluid (maxWidth: 1200, quality: 90) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -55,6 +55,7 @@ const PostItem = styled.li`
   margin: 2rem 0;
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  background: ${theme.colours.palette100};
   transition: 0.4s ease-in-out;
 
   ${media.small} {
@@ -62,7 +63,7 @@ const PostItem = styled.li`
   }
 
   &:hover {
-    box-shadow: 0 0 8px ${theme.colours.midBlue};
+    box-shadow: 0 5px 8px ${theme.colours.palette700};
   }
 `
 
@@ -70,7 +71,7 @@ const PostImg = styled(Link)`
   height: 300px;
   overflow: hidden;
   border-radius: 8px 8px 0 0;
-  border-bottom: 2px solid ${theme.colours.offWhite};
+  border-bottom: 2px solid ${theme.colours.palette200};
 
   .gatsby-image-wrapper {
     height: 100%;
@@ -92,7 +93,7 @@ const PostText = styled.div`
   ${media.small} {
     flex: 2;
     overflow: hidden;
-    border-left: 2px solid ${theme.colours.offWhite};
+    border-left: 2px solid ${theme.colours.palette200};
   }
 `
 
@@ -102,14 +103,14 @@ const PostTitle = styled.h3`
   text-overflow: ellipsis;
   font-weight: 500;
   font-family: ${theme.fonts.Roboto};
-  color: ${theme.colours.midBlueDark};
+  color: ${theme.colours.palette600};
   padding: 0.5rem 0;
 `
 
 const PostDescription = styled.h4`
   font-weight: 300;
   font-family: ${theme.fonts.Roboto};
-  color: ${theme.colours.dark};
+  color: ${theme.colours.palette700};
 
   ${media.small} {
     white-space: nowrap;
@@ -120,7 +121,7 @@ const PostDescription = styled.h4`
 
 const PostDate = styled.p`
   font-style: italic;
-  color: ${theme.colours.midBlueDark}; 
+  color: ${theme.colours.hilite400}; 
 
   ${media.small} {
     bottom: 0px;
@@ -146,7 +147,7 @@ class BlogPage extends Component {
       <Layout>
         <SEO title="Blog" />
         <Section>        
-          <Container>
+          <Container transparent={true}>
           <h2>Recent Blog Posts</h2>
            <PostList>
             {blogPosts.edges.map((post, key) => {

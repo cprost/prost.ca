@@ -21,15 +21,26 @@ const FooterItems = styled.div`
   a {
     float: left;
     padding: 0 1.5rem;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    
+      path {
+        fill: ${theme.colours.palette100};
+      }
+    }
   }
 `
 
 const Copyright = styled.p`
-  color: ${props => props.index ? theme.colours.light : theme.colours.dark};
+  color: ${theme.colours.palette100};
+  text-shadow: 0 0 2px ${theme.colours.palette600};
 
   a {
     text-decoration: none;
-    color: ${props => props.index ? theme.colours.light : theme.colours.midBlueDark};
+    font-weight: 600;
+    color: ${theme.colours.hilite200};
   }
 `
 
@@ -39,16 +50,16 @@ const Footer = (props) => {
     <FooterWrapper>
       <FooterItems >
         <a href="https://github.com/cprost/">
-          <LogoGitHub className={props.index ? 'social-icon index' : 'social-icon'}/>
+          <LogoGitHub />
         </a>
         <a href="https://www.linkedin.com/in/cprost/">
-          <LogoLinkedIn className={props.index ? 'social-icon index' : 'social-icon'}/>
+          <LogoLinkedIn/>
         </a>
         <a href="https://www.instagram.com/">
-          <LogoInstagram className={props.index ? 'social-icon index' : 'social-icon'}/>
+          <LogoInstagram />
         </a>
       </FooterItems>
-      <Copyright index={props.index}>
+      <Copyright>
         © 2020 Chris Prost | Built with 
         <a href="https://gatsbyjs.org/"> Gatsby</a>
       </Copyright>

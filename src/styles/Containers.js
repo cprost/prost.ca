@@ -15,13 +15,14 @@ const Container = styled.div`
   padding: 2rem 2rem 4rem 2rem;
   margin: 2rem auto;
   max-width: ${theme.maxWidthOther};
-  background-color: ${theme.colours.light};
-  color: ${theme.colours.dark};
-  border: 2px solid ${theme.colours.offWhite};
+  background: ${props => props.transparent ? 'none' : theme.colours.palette100};
+  color: ${props => props.transparent ? theme.colours.palette100 : theme.colours.palette700};
+  border: ${props => props.transparent ? 'none' : theme.colours.palette700};
+  box-shadow: ${props => props.transparent ? 'none' : `0 5px 8px ${theme.colours.palette700}`};
   border-radius: 0.5rem;
   
   ${media.small} {
-    padding: 0 0 1rem 0;
+    padding: 0.5rem;
     border: none;
   }
 

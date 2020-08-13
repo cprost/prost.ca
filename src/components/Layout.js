@@ -6,14 +6,16 @@ import { theme } from '../styles/'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
-import clouds from '../images/clouds.png'
+import bubbleSVG from '../images/bubbles'
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: ${theme.colours.midBlue};
-  background-image: ${props => props.index ? '' : `url(${clouds})`};
+  background-color: ${theme.colours.palette600};
+  background-repeat: repeat;
+  background-size: 1500px;
+  background-image: ${props => props.index ? '' : bubbleSVG};
 `
 
 const Float = styled.div`
@@ -36,7 +38,7 @@ class Layout extends React.Component {
         <Navigation index={this.props.index} />
         {children}
         <Float>
-          <Footer index={this.props.index} />
+          <Footer/>
         </Float>
       </Main>
     )

@@ -38,13 +38,14 @@ module.exports = {
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: true,
+              quality: 90,
             }
           },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: "language-",
-              inlineCodeMarker: '>',
+              inlineCodeMarker: '<+>',
               aliases: {},
               showLineNumbers: true,
               noInlineHighlight: false,

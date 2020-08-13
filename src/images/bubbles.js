@@ -1,0 +1,6 @@
+// Free Snowball Dots SVG provided by SVGeez.com - CC 4.0 License - © 2019 Megan Young
+// Edited for theme support in src/components/Layout.js
+
+const bubbleSVG = `url("data:image/svg+xml;charset=utf8,<svg id='Layer_1' fill-opacity='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' style='enable-background:new 0 0 500 500'><style> .st0{fill:rgba(255, 255, 255, 0.20)} </style><circle class='st0' cx='87.5' cy='46.5' r='8.5'/><circle class='st0' cx='94.5' cy='124.5' r='15.5'/><circle class='st0' cx='244.5' cy='91.5' r='21.5'/><circle class='st0' cx='348.5' cy='80.5' r='7.5'/><circle class='st0' cx='155' cy='356' r='10'/><circle class='st0' cx='422' cy='139' r='14'/><circle class='st0' cx='123' cy='251' r='6'/><circle class='st0' cx='280' cy='204' r='11'/><circle class='st0' cx='315' cy='311' r='11'/><circle class='st0' cx='262' cy='411' r='6'/><circle class='st0' cx='455.5' cy='395.5' r='12.5'/><circle class='st0' cx='432' cy='500' r='25'/><circle class='st0' cx='432' r='25'/><circle class='st0' cx='-3.5' cy='240.5' r='10.5'/><circle class='st0' cx='496.5' cy='240.5' r='10.5'/><circle class='st0' cx='96' cy='437' r='3'/></svg>")` 
+
+export default bubbleSVG

@@ -3,6 +3,8 @@
  * https://nordtheme.com
  *
  * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
+ * 
+ * Some colors and spacing parameters modified by Chris Prost
  */
 
  code[class*="language-"],
@@ -34,12 +36,12 @@
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-	 background: #2E3440;
+	 background: #405977;
  }
  
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-	 padding: 0.1rem 0.25rem;
+	 padding: 0.15rem 0.25rem;
 	 border-radius: 0.2rem;
 	 white-space: normal;
  }

@@ -14,15 +14,15 @@ const PagiWrapper = styled.div`
 const PagiComponent = styled.h4`
   display: inline;
   margin-left: 1rem;
-  color: ${theme.colours.dark};
+  color: ${theme.colours.palette100};
 
   a {
     text-decoration: none;
-    color: ${theme.colours.darkBlue};
+    color: ${theme.colours.palette200};
   }
 
   &.noneleft {
-    color: ${theme.colours.lighterBlue};
+    color: ${theme.colours.palette300};
   }
 `
 

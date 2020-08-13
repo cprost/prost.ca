@@ -11,7 +11,7 @@ const HeroWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: ${theme.colours.midBlue};
+  background: ${theme.colours.palette600};
   font-family: Montserrat;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -24,27 +24,27 @@ const ParticleBackground = styled(Particles)`
   left: 0;
   opacity: ${props => props.isMounted ? 1 : 0};
   transition: opacity 2s ease-in-out;
-  background-color: ${theme.colours.midBlue};
+  background-color: ${theme.colours.palette600};
 `
 
 const HeroTitle = styled.h1`
   margin-bottom: 0;
-  color: ${theme.colours.light};
+  color: ${theme.colours.palette100};
   font-weight: 500;
-  text-shadow: 0 0 1px ${theme.colours.midBlue};
+  text-shadow: 0 0 1px ${theme.colours.palette300};
 `
 
 const HeroSubtitle = styled.h3`
   margin-top: 1rem;
   margin-bottom: 0;
-  color: ${theme.colours.light};
-  text-shadow: 1px 1px 2px ${theme.colours.midBlue}, -1px -1px 2px ${theme.colours.midBlue};
+  color: ${theme.colours.palette200};
+  text-shadow: 1px 1px 2px ${theme.colours.palette600}, -1px -1px 2px ${theme.colours.palette600};
 `
 
 const HeroDesc = styled.h3`
   margin-top: 0.5rem;
-  color: ${theme.colours.light};
-  text-shadow: 1px 1px 2px ${theme.colours.midBlue}, -1px -1px 2px ${theme.colours.midBlue};
+  color: ${theme.colours.palette200};
+  text-shadow: 1px 1px 2px ${theme.colours.palette600}, -1px -1px 2px ${theme.colours.palette600};
 `
 
 const Hero = ({data}) => {

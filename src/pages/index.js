@@ -11,15 +11,15 @@ import { Section, IndexContainer, EdgeTop, EdgeBottom, theme } from '../styles'
 
 const IndexSection = styled(Section)`
   margin-top: -0.25rem;
-  background-color: ${theme.colours.light};
+  background-color: ${theme.colours.palette100};
 
   &.alt {
     margin-top: -4rem;
     margin-bottom: -4rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    color: ${theme.colours.light};
-    background-color: ${theme.colours.midBlue};
+    color: ${theme.colours.palette100};
+    background-color: ${theme.colours.palette600};
   }
 `
 

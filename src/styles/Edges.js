@@ -12,12 +12,12 @@ const ShadowLower = styled.div`
 
 const ShapeUpper = styled.div`
   clip-path: polygon(0 80%, 100% 0, 100% 100%, 0% 100%);
-  background: ${theme.colours.light};
+  background: ${theme.colours.palette100};
   padding-top: 2rem;
   padding-bottom: 2rem;
 
   &.alt-edge {
-    background: ${theme.colours.offWhite};
+    background: ${theme.colours.palette100};
   }
 `
 
