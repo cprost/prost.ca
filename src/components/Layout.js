@@ -14,8 +14,8 @@ const Main = styled.main`
   min-height: 100vh;
   background-color: ${theme.colours.palette600};
   background-repeat: repeat;
-  background-size: 1500px;
-  background-image: ${props => props.index ? '' : backgroundSVG};
+  background-size: 900px;
+  background-image: ${backgroundSVG};
 `
 
 const Float = styled.div`
@@ -24,11 +24,6 @@ const Float = styled.div`
 `
 
 class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    console.log(props)
-  }
-
   render() {
     const { children } = this.props
 

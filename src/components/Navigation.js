@@ -18,11 +18,11 @@ const StyledLink = styled(Link)`
 `
 
 const BurgerLink = styled(Link)`
-  color: ${theme.colours.palette300};
+  color: ${theme.colours.palette500};
   text-decoration: none;
 
   &.active-nav {
-    color: ${theme.colours.palette600};
+    color: ${theme.colours.hilite200};
   }
 `
 
@@ -182,7 +182,9 @@ class Navigation extends Component {
 
     return (
       <Nav scrollPos={scrollPos}>
-        <StyledLink to='/'><Logo src={SiteLogo} /></StyledLink>
+        <StyledLink to='/'>
+          <Logo src={SiteLogo} aria-label='Index page'/>
+        </StyledLink>
         <NavList>
           <NavItem>
             <StyledLink to="/blog" activeClassName={'active-nav'} partiallyActive={true}>Blog</StyledLink>

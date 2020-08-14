@@ -82,7 +82,7 @@ const Card = React.forwardRef(({ title, description, skills, img, ext }, ref) =>
       </CardTitle>
       <CardSkills>
         {skills.map((skill, index) => {
-          return <li>{skill}</li>
+          return <li key={skill}>{skill}</li>
         })}
       </CardSkills>
       <p>{description}</p>

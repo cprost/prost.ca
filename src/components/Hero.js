@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import Particles from 'react-particles-js'
+// import Particles from 'react-particles-js'
 
 import { IndexContainer, theme } from '../styles'
-import params from '../styles/particles'
+// import params from '../styles/particles'
 
 const HeroWrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: ${theme.colours.palette600};
   font-family: Montserrat;
   padding-left: 2rem;
   padding-right: 2rem;
 `
 
-const ParticleBackground = styled(Particles)`
-  position: absolute;
-  height: calc(100vh + 8rem);
-  width: 100vw;
-  left: 0;
-  opacity: ${props => props.isMounted ? 1 : 0};
-  transition: opacity 2s ease-in-out;
-  background-color: ${theme.colours.palette600};
-`
+// const ParticleBackground = styled(Particles)`
+//   position: absolute;
+//   height: calc(100vh + 8rem);
+//   width: 100vw;
+//   left: 0;
+//   opacity: ${props => props.isMounted ? 1 : 0};
+//   transition: opacity 2s ease-in-out;
+//   // background-color: ${theme.colours.palette600};
+// `
 
 const HeroTitle = styled.h1`
   margin-bottom: 0;
@@ -62,7 +61,7 @@ const Hero = ({data}) => {
 
   return (
     <HeroWrapper>
-      <ParticleBackground params={params} isMounted={isMounted} />
+      {/* <ParticleBackground params={params} isMounted={isMounted} /> */}
       <IndexContainer>
       <TransitionGroup>
         {isMounted && heroItems.map((node, i) => (

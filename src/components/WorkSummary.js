@@ -48,7 +48,7 @@ class WorkSummary extends Component {
         <ProjectCards>
         {data.map(({ node }, i) => {
           return (
-            <div ref={ref => this.cardRefs[i] = ref}>
+            <div ref={ref => this.cardRefs[i] = ref} key={i}>
             <Card 
               title={node.frontmatter.title}
               description={node.frontmatter.description}

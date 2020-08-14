@@ -7,7 +7,7 @@ date: "2020-06-30"
 
 ### The Gatsby Experience
 
-I'll keep things short, sweet: Gatsby is great. If you haven't heard of Gatsby, it's a static site generator built on top of ReactJS. It allows developers to build sites that leverage nearly all of the features of the clean and modern React framework, while providing users with an incredibly fast experience. Content like images can also be optimized at build time, so bandwidth costs are reduced. Since you're building a static site, there's also no need to keep a Node backend running, so hosting is a trivial issue.
+I'll keep things short and sweet: Gatsby is great. If you haven't heard of Gatsby, it's a static site generator built on top of ReactJS. It allows developers to build sites that leverage the features of the clean and modern React framework, while providing users with an incredibly fluid and fast-loading experience. Content like images can also be optimized at build time, so bandwidth costs are reduced. Since you're building a static site, there's also no need to keep a Node backend running, so hosting is a trivial issue.
 
 Designing this website was just like the prototypical React experience; pages and their constituent components are written in JSX, and you can easily use a CSS-in-JS library like **styled-components** or **Emotion** for reusable React-friendly styling. But, where Gatsby really shines is in its content-generating APIs. Gatsby leverages the GraphQL language to intuitively source data for populating your website. I used GraphQL to read the Markdown files populating my blog posts (including this one!), but you could also use one of Gatsby's many plugins to use GraphQL to source from any popular content management system like WordPress or Contentful.
 
@@ -35,5 +35,7 @@ Having previously deployed several Wordpress websites on AWS (including a previo
 ### Summary
 
 If you want to build a predominantly static website like a blog or portfolio, Gatsby and Netlify is as easy and as low-cost as it gets. You can leverage the flexibility of React and its libraries for designing your frontend, without needing to worry unnecessarily about the backend and hosting. As only static content is being delivered, SEO is a breeze, and there are fewer security concerns to worry about. Gatsby's active community and large selection of plugins makes development simple, and finished sites will be incredibly snappy versus the single-page application status-quo. Simply put, Gatsby is a breath of fresh air.
+
+<br>
 
 *Header photo by Christina Morillo from Pexels*

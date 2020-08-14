@@ -5,6 +5,7 @@ import { theme } from '../styles'
 import LogoGitHub from './icons/logo-github'
 import LogoInstagram from './icons/logo-instagram'
 import LogoLinkedIn from './icons/logo-linkedin'
+import LogoEmail from './icons/logo-email'
 
 const FooterWrapper = styled.footer`
   position: absolute;
@@ -25,9 +26,14 @@ const FooterItems = styled.div`
     svg {
       width: 32px;
       height: 32px;
+      fill: none;
     
       path {
         fill: ${theme.colours.palette100};
+      }
+
+      polyline, rect {
+        stroke: ${theme.colours.palette100};
       }
     }
   }
@@ -44,19 +50,19 @@ const Copyright = styled.p`
   }
 `
 
-const Footer = (props) => {
+const Footer = () => {
 
   return (
     <FooterWrapper>
       <FooterItems >
-        <a href="https://github.com/cprost/">
+        <a href="https://github.com/cprost/" aria-label="GitHub">
           <LogoGitHub />
         </a>
-        <a href="https://www.linkedin.com/in/cprost/">
+        <a href="https://www.linkedin.com/in/cprost/" aria-label="LinkedIn">
           <LogoLinkedIn/>
         </a>
-        <a href="https://www.instagram.com/">
-          <LogoInstagram />
+        <a href="mailto:chris.ulo.prost at gmail dot com" aria-label="Email">
+          <LogoEmail />
         </a>
       </FooterItems>
       <Copyright>

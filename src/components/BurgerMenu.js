@@ -27,7 +27,7 @@ export const BurgerButton = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${theme.colours.palette300};
+    background: ${theme.colours.palette100};
     border-radius: 5px;
     transition: all 0.2s linear;
     position: relative;
@@ -37,16 +37,16 @@ export const BurgerButton = styled.button`
       background: ${theme.colours.palette600};
     }
 
-    &.active:nth-child(1) {
+    &.active:nth-of-type(1) {
       transform: rotate(45deg);
     }
 
-    &.active:nth-child(2) {
+    &.active:nth-of-type(2) {
       opacity: 0;
       transform: translateX(-0.2rem);
     }
 
-    &.active:nth-child(3) {
+    &.active:nth-of-type(3) {
       transform: rotate(-45deg);
     }
   }
