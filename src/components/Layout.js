@@ -6,7 +6,7 @@ import { theme } from '../styles/'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
-import bubbleSVG from '../images/bubbles'
+import backgroundSVG from '../images/backgroundSVG'
 
 const Main = styled.main`
   display: flex;
@@ -15,7 +15,7 @@ const Main = styled.main`
   background-color: ${theme.colours.palette600};
   background-repeat: repeat;
   background-size: 1500px;
-  background-image: ${props => props.index ? '' : bubbleSVG};
+  background-image: ${props => props.index ? '' : backgroundSVG};
 `
 
 const Float = styled.div`

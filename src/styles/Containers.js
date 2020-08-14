@@ -18,7 +18,7 @@ const Container = styled.div`
   background: ${props => props.transparent ? 'none' : theme.colours.palette100};
   color: ${props => props.transparent ? theme.colours.palette100 : theme.colours.palette700};
   border: ${props => props.transparent ? 'none' : theme.colours.palette700};
-  box-shadow: ${props => props.transparent ? 'none' : `0 5px 8px ${theme.colours.palette700}`};
+  box-shadow: ${props => props.transparent ? 'none' : theme.shadows.darker};
   border-radius: 0.5rem;
   
   ${media.small} {

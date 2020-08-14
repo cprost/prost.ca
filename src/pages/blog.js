@@ -54,7 +54,7 @@ const PostItem = styled.li`
   flex-direction: column;
   margin: 2rem 0;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  box-shadow: ${theme.shadows.dark};
   background: ${theme.colours.palette100};
   transition: 0.4s ease-in-out;
 
@@ -63,7 +63,11 @@ const PostItem = styled.li`
   }
 
   &:hover {
-    box-shadow: 0 5px 8px ${theme.colours.palette700};
+    box-shadow: ${theme.shadows.darker};
+
+    h3 {
+      color: ${theme.colours.palette700};
+    }
   }
 `
 
@@ -105,6 +109,11 @@ const PostTitle = styled.h3`
   font-family: ${theme.fonts.Roboto};
   color: ${theme.colours.palette600};
   padding: 0.5rem 0;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    color: ${theme.colours.palette700};
+  }
 `
 
 const PostDescription = styled.h4`

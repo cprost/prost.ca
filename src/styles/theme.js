@@ -43,6 +43,8 @@ const theme = {
   shadows: {
     light: '0 5px 8px #a2b5cd',
     dark: '0 5px 8px #405977',
+    darker: '0 8px 8px #2b3b50',
+    navEdge: '0 0 5px 0 rgba(0, 0, 0, 0.8)',
   },
 
   scrollReveal: (sequence = 1) => {

@@ -36,9 +36,10 @@ const Nav = styled.nav`
   height: 75px;
   padding-left: 2rem;
   padding-right: 2rem;
-  box-shadow: ${props => props.scrollPos === 'up' ? '0 0 5px rgba(0, 0, 0, 0.8)' : 'none'};
-  background: ${props => (props.scrollPos === 'top' && props.index) ? 'transparent' : theme.colours.palette600 };
+  box-shadow: ${props => props.scrollPos === 'up' ? theme.shadows.navEdge : 'none'};
+  background: ${props => (props.scrollPos === 'up') ? theme.colours.palette600 : 'transparent' };
   transition: all 0.4s ease-in-out;
+  transition-delay: 0.2s;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
   z-index: 3;
 
@@ -113,7 +114,7 @@ const BurgerMenu = styled.nav`
 
   &.active {
     transform: translateX(0%);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: ${theme.shadows.navEdge};
   }
 
   h2 {
@@ -160,7 +161,7 @@ class Navigation extends Component {
   onScroll() {
     const { scrollAmount, active } = this.state
     const yOffset = window.scrollY
-    const scrollThresh = 25  // minimum scroll pixels to update scroll state
+    const scrollThresh = 10  // minimum scroll pixels to update scroll state
 
     if (Math.abs(scrollAmount - yOffset) <= scrollThresh || active) {
       return  // to prevent menu movement for scrolling less than threshold pixels
@@ -180,7 +181,7 @@ class Navigation extends Component {
     const toggleActive = this.toggleActive
 
     return (
-      <Nav scrollPos={scrollPos} index={this.props.index} >
+      <Nav scrollPos={scrollPos}>
         <StyledLink to='/'><Logo src={SiteLogo} /></StyledLink>
         <NavList>
           <NavItem>

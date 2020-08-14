@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import { theme } from '../../styles'
 
 const CardWrapper = styled.div`
-  background-color: white;
+  background-color: ${theme.colours.palette100};
   border-radius: 4px;
   box-shadow: ${theme.shadows.light};
   font-family: ${theme.fonts.Roboto};
