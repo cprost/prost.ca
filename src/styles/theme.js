@@ -53,7 +53,8 @@ const theme = {
       origin: 'bottom',
       distance: '1.5rem',
       duration: '400',
-      easing: 'ease-in-out'
+      easing: 'ease-in-out',
+      opacity: 0
     }
   }
 }

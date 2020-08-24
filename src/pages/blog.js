@@ -47,6 +47,7 @@ const PostList = styled.ul`
   margin: 0rem;
   list-style-type: none;
   padding-left: 0rem;
+  visibility: ${props => props.mounted ? 'visible' : 'hidden'};
 `
 
 const PostItem = styled.li`
@@ -142,15 +143,18 @@ class BlogPage extends Component {
   constructor(props) {
     super(props)
     this.postRefs = []
+    this.state = {
+      mounted: false
+    }
   }
 
   componentDidMount = () => {
+    this.setState({ mounted: true })
     this.postRefs.forEach((postRef, i) => ScrollReveal().reveal(postRef, theme.scrollReveal(i)))
   }
 
   render() {
     const { data: { allMarkdownRemark: blogPosts }, pageContext } = this.props
-    console.log(blogPosts)
 
     return (
       <Layout>
@@ -158,7 +162,7 @@ class BlogPage extends Component {
         <Section>        
           <Container transparent={true}>
           <h2>Recent Blog Posts</h2>
-           <PostList>
+           <PostList mounted={this.state.mounted}>
             {blogPosts.edges.map((post, key) => {
               return (
                 <div key={key} ref={ref => this.postRefs[key] = ref}>
