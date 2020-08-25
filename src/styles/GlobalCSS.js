@@ -54,11 +54,11 @@ const GlobalCSS = () => {
           margin-bottom: 0.5rem;
 
           ${media.medium} {
-            font-size: 30px;
+            font-size: 34px;
           }
 
           ${media.small} {
-            font-size: 25px;
+            font-size: 30px;
           }
         }
 

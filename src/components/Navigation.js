@@ -38,9 +38,9 @@ const Nav = styled.nav`
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? theme.shadows.navEdge : 'none'};
   background: ${props => props.scrollPos === 'up' ? theme.colours.palette600 : 'transparent' };
-  transition-delay: ${props => props.scrollPos === 'top' ? '0.7s' : '0.1s'};
   transition: all 0.4s ease-in-out;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
+  transition-delay: ${props => props.scrollPos === 'top' ? '0.7s' : '0.2s'};
   z-index: 3;
 
   h2 {

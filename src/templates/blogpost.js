@@ -20,15 +20,7 @@ export const query = graphql`
 `
 
 const PostContainer = styled(Container)`
-  padding-left: 2rem;
-  padding-right: 2rem;
   border-radius: 0.5rem;
-
-  ${media.small} {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    border: none;
-  }
 `
 
 const PostTitle = styled.h1`
