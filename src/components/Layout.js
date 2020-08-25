@@ -27,10 +27,13 @@ class Layout extends React.Component {
   render() {
     const { children } = this.props
 
+    // check if index page or not - shows Navigation animation on index page only
+    const index = this.props.index !== undefined ? true : false;
+
     return (
-      <Main index={this.props.index}>
+      <Main index={index}>
         <GlobalCSS />
-        <Navigation index={this.props.index} />
+        <Navigation index={index} />
         {children}
         <Float>
           <Footer/>

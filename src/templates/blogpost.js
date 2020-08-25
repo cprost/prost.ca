@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import { Container, Section, theme, media } from '../styles'
 
 export const query = graphql`
@@ -10,6 +11,7 @@ export const query = graphql`
     markdown: markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        description
         date
       }
       html
@@ -119,6 +121,10 @@ const BlogPost = (props) => {
   const { markdown } = props.data
   return (
     <Layout>
+      <SEO
+        title={markdown.frontmatter.title}
+        description={markdown.frontmatter.description}
+      />
       <Section>
         <PostContainer>
           <PostTitle>{markdown.frontmatter.title}</PostTitle>

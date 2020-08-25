@@ -37,14 +37,18 @@ const Nav = styled.nav`
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: ${props => props.scrollPos === 'up' ? theme.shadows.navEdge : 'none'};
-  background: ${props => (props.scrollPos === 'up') ? theme.colours.palette600 : 'transparent' };
+  background: ${props => props.scrollPos === 'up' ? theme.colours.palette600 : 'transparent' };
+  transition-delay: ${props => props.scrollPos === 'top' ? '0.7s' : '0.1s'};
   transition: all 0.4s ease-in-out;
-  transition-delay: 0.2s;
   transform: ${props => props.scrollPos === 'down' ? 'translateY(-80px)' : 'translateY(0px)'};
   z-index: 3;
 
   h2 {
     white-space: nowrap;
+  }
+
+  &.unmounted {
+    transform: ${props => props.index ? 'translateY(-80px)' : 'translateY(0px)'}
   }
 `
 
@@ -130,10 +134,9 @@ class Navigation extends Component {
   constructor(props) {
     super(props)
 
-    this._mounted = false
-
     this.state = {
       active: false,
+      mounted: false,
       scrollAmount: 0,
       scrollPos: 'top',
     }
@@ -142,18 +145,18 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
-    this._mounted = true
+    this.setState({ mounted: true });
     window.addEventListener('scroll', () => this.onScroll());
   }
 
   componentWillUnmount() {
-    this._mounted = false;
+    this.setState({ mounted: false });
  }
 
   toggleActive(active, counter) {
     // check if mounted before modifying state
 
-    this._mounted && this.setState({
+    this.state.mounted && this.setState({
       active: !active
       })
   }
@@ -179,9 +182,10 @@ class Navigation extends Component {
   render() {
     const { active, scrollPos } = this.state
     const toggleActive = this.toggleActive
+    const { index } = this.props
 
     return (
-      <Nav scrollPos={scrollPos}>
+      <Nav scrollPos={scrollPos} index={index} className={`${this.state.mounted ? '' : 'unmounted'}`}>
         <StyledLink to='/'>
           <Logo src={SiteLogo} aria-label='Index page'/>
         </StyledLink>

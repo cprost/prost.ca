@@ -91,13 +91,13 @@ const About = ({ data }) => {
                 {categories.map((category, index) => {
                   const skillList = skills[category]
                   return skillList.map((skill) => (
-                    <Skill color={skillColours[index]}>{skill}</Skill>
+                    <Skill key={skill} color={skillColours[index]}>{skill}</Skill>
                   ))
                 })}
               </SkillList>
               <SkillCategories>
                 {categories.map((category, index) => {
-                  return <li style={{color: skillColours[index], textTransform: 'capitalize'}}>{category.replace(/_/g, ' ')}</li>
+                  return <li key={category} style={{color: skillColours[index], textTransform: 'capitalize'}}>{category.replace(/_/g, ' ')}</li>
                 })}
               </SkillCategories>
             </SkillWrapper>
