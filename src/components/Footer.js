@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 
 import { theme } from '../styles'
 import LogoGitHub from './icons/logo-github'
-import LogoInstagram from './icons/logo-instagram'
 import LogoLinkedIn from './icons/logo-linkedin'
 import LogoEmail from './icons/logo-email'
 

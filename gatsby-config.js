@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Chris Prost`,
-    description: `My personal website and portfolio`,
+    description: `Chris Prost is a Toronto-based developer building machine-learning and finance software.`,
     author: `Chris Prost`,
   },
   plugins: [
