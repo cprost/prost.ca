@@ -1,16 +1,18 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://prost.ca">
-    <img alt="Prost.ca logo" src="https://raw.githubusercontent.com/cprost/prost.ca/master/src/images/favicon-192x192.png" width="60" />
+    <img alt="Prost.ca logo" src="https://raw.githubusercontent.com/cprost/prost.ca/master/src/images/favicon-192x192.png" width="120" />
   </a>
 </p>
 <h1 align="center">
   Prost.ca
 </h1>
 
+![Screenshot of prost.ca index page](https://raw.githubusercontent.com/cprost/prost.ca/master/content/experience/project2/website.png)
+
 My [personal website](https://prost.ca/) built from scratch with Gatsby + React, deployed on [Netlify](https://netlify.com/). It features lightning-fast loading from Gatsby's static site generation, while leveraging React's UI and state management features. Most content and pages are auto-generated from Markdown - no external CMS is required.
 
-This site uses responsive design for desktop + mobile browsing support. I also sought to use only a handful of runtime JS libraries to encourage faster loading; most of the heavy lifting is done at build time. A more in-depth discussion about building this website was posted on my [blog](https://prost.ca/blog/kickoff).
+This site uses responsive design for both desktop and mobile browsing. Only a handful of frontend JS libraries to encourage faster loading; most of the heavy lifting is done at build time. A more in-depth discussion about building this website was posted on my [blog](https://prost.ca/blog/kickoff).
 
 ## License
 
