@@ -1,10 +1,10 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from '@emotion/styled'
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "@emotion/styled"
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import { Container, Section, theme, media } from '../styles'
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import { Container, Section, theme } from "../styles"
 
 export const query = graphql`
   query($slug: String) {
@@ -50,7 +50,8 @@ const PostContent = styled.div`
     font-size: 28px;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     border-bottom: 2px solid ${theme.colours.palette200};
     padding-bottom: 0.3rem;
     font-weight: 500;
@@ -68,7 +69,8 @@ const PostContent = styled.div`
     margin: 2rem 0;
   }
 
-  ul, li {
+  ul,
+  li {
     font-size: 16px;
     margin-top: 0;
     margin-bottom: 0.5rem;
@@ -100,8 +102,18 @@ const PostContent = styled.div`
     border-right: 1px solid ${theme.colours.palette200};
   }
 
+  em {
+    padding-right: 2px;
+    // to fix rightward slant
+  }
+
   .gatsby-highlight {
     margin-bottom: 2rem;
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   img {
@@ -109,7 +121,7 @@ const PostContent = styled.div`
   }
 `
 
-const BlogPost = (props) => {
+const BlogPost = props => {
   const { markdown } = props.data
   return (
     <Layout>
