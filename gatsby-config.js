@@ -25,27 +25,27 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon-96x96.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-192x192.png`, // This path is relative to the root of the site.
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          'gatsby-remark-relative-images',
+          "gatsby-remark-relative-images",
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: false,
               quality: 90,
-            }
+            },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
             options: {
               classPrefix: "language-",
-              inlineCodeMarker: '<+>',
+              inlineCodeMarker: "<+>",
               aliases: {},
               showLineNumbers: true,
               noInlineHighlight: false,
@@ -70,9 +70,9 @@ module.exports = {
               },
               escapeEntities: {},
             },
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -80,18 +80,18 @@ module.exports = {
         fonts: [
           {
             family: `Open Sans`,
-            variants: [`300`, `400`, `500`, `600`, `700`]
+            variants: [`300`, `400`, `500`, `600`, `700`],
           },
           {
             family: `Roboto`,
-            variants: [`300`, `400`, `500`, `700`]
+            variants: [`300`, `400`, `500`, `700`],
           },
           {
             family: `Montserrat`,
-            variants: [`300`, `400`, `500`, `700`]
+            variants: [`300`, `400`, `500`, `700`],
           },
         ],
       },
-    }
+    },
   ],
 }
